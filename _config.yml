@@ -15,17 +15,16 @@
 minimal_mistakes_skin    : "default" # "air", "aqua", "contrast", "dark", "dirt", "neon", "mint", "plum", "sunrise"
 
 # Site Settings
-locale                   : "en-US"
+locale                   : "ko"
 rtl                      : # true, false (default) # turns direction of the page into right to left for RTL languages
 title                    : "ramona's devstory"
 title_separator          : "-"
-subtitle                 : # site tagline that appears below site title in masthead
-name                     : "ramona"
+subtitle                 : "it'sme, ramona"
 description              : "내일의 후회가 오늘이 되지 않도록"
 url                      : "rawonax.github.io" # the base hostname & protocol for your site, e.g. "https://example.com"`
 baseurl                  : ""
 repository               : "rawonax/rawonax.github.io"
-teaser                   :  # path of teaser image to display in the masthead, e.g. "/assets/images/88x88.png"
+teaser                   : "profile/avatar.jpg" # path of teaser image to display in the masthead, e.g. "/assets/images/88x88.png"
 logo                     : "profile/avatar.jpg"
 masthead_title           : "rawonax"
 breadcrumbs              : true
@@ -68,11 +67,11 @@ reCaptcha:
 atom_feed:
   path                   : # blank (default) uses feed.xml
   hide                   : # true, false (default)
-search                   : # true, false (default)
-search_full_content      : # true, false (default)
-search_provider          : # lunr (default), algolia, google
+search                   : true
+search_full_content      : true
+search_provider          : google
 lunr:
-  search_within_pages    : # true, false (default)
+  search_within_pages    : true
 algolia:
   application_id         : # YOUR_APPLICATION_ID
   index_name             : # YOUR_INDEX_NAME
@@ -113,11 +112,11 @@ analytics:
 
 # Site Author
 author:
-  name             : "Your Name"
-  avatar           : # path of avatar image, e.g. "/assets/images/bio-photo.jpg"
-  bio              : "I am an **amazing** person."
+  name             : "ramona"
+  avatar           : "profile/avatar.jpg"
+  bio              : "오늘의 후회가 내일이 되지 않도록"
   location         : "Somewhere"
-  email            :
+  email            : "mailto:rawonax7@gmail.com"
   links:
     - label: "Email"
       icon: "fas fa-fw fa-envelope-square"
