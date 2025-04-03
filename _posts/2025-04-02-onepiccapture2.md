@@ -2,7 +2,8 @@
 title: "사진 한 장으로 아이피 추적하기3- webrtc"
 categories: [security]
 tags:
-  - 잡다한 연구
+  - ects
+date: 2025-04-02
 ---
 ## **원리**
 
