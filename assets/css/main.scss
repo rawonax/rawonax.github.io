@@ -8,44 +8,5 @@ search: false
 @import "minimal-mistakes/skins/{{ site.minimal_mistakes_skin | default: 'default' }}"; // skin
 @import "minimal-mistakes"; // main partials
 
-// 📝 Custom Font Size for Post Content
-.page__content {
-  font-size: 0.87em; // adjust as you like
-  line-height: 2.0;
-}
 
-.page__content h1 {
-  font-size: 1.1rem;
-}
-.page__content h2 {
-  font-size: 1.0rem;
-}
-.page__content h3 {
-  font-size: 0.9rem;
-}
-
-// 팬톤 13-4201 Cloud Blue 테마 색상
-$cloud-blue: #C6D6E3;
-
-// 사이드바 배경 색상
-.sidebar {
-  background-color: $cloud-blue !important;
-}
-
-// 네비게이션 바 배경 색상
-.masthead {
-  background-color: $cloud-blue !important;
-}
-
-.site-nav, .masthead, .sidebar {
-    background-color: $cloud-blue !important;
-  }
-
-.sidebar, .masthead {
-    color: #222; // 어두운 회색
-  }
-  
-.sidebar a, .masthead a {
-    color: #222;
-  }
   
