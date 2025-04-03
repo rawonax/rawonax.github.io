@@ -25,7 +25,7 @@ url                      : "rawonax.github.io" # the base hostname & protocol fo
 baseurl                  : ""
 repository               : "rawonax/rawonax.github.io"
 teaser                   : "profile/avatar.jpg" # path of teaser image to display in the masthead, e.g. "/assets/images/88x88.png"
-logo                     : "profile/avatar.jpg"
+logo                     : "profile/avatar.png"
 masthead_title           : "rawonax"
 breadcrumbs              : true
 words_per_minute         : 200
