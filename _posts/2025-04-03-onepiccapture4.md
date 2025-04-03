@@ -1,7 +1,6 @@
 ---
 title: "사진 한 장으로 아이피 추적하기4 -결론과 총정리"
-categories:
-  - security
+categories: [security]
 tags:
   - 잡다한 연구
 ---
