@@ -7,3 +7,19 @@ search: false
 
 @import "minimal-mistakes/skins/{{ site.minimal_mistakes_skin | default: 'default' }}"; // skin
 @import "minimal-mistakes"; // main partials
+
+// 📝 Custom Font Size for Post Content
+.page__content {
+  font-size: 0.8rem; // adjust as you like
+  line-height: 1.7;
+}
+
+.page__content h1 {
+  font-size: 1.6rem;
+}
+.page__content h2 {
+  font-size: 1.4rem;
+}
+.page__content h3 {
+  font-size: 1.2rem;
+}
