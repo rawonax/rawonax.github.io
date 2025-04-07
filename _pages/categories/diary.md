@@ -5,3 +5,4 @@ permalink: /categories/diary/
 taxonomy: diary
 entries_layout: list
 ---
+{% include category-list.html %}

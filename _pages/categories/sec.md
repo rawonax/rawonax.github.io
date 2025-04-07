@@ -5,3 +5,4 @@ permalink: /categories/sec/
 taxonomy: sec
 entries_layout: list
 ---
+{% include category-list.html %}

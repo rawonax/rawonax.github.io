@@ -6,3 +6,4 @@ taxonomy: category
 category: dev
 entries_layout: list
 ---
+{% include category-list.html %}
