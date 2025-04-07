@@ -19,14 +19,14 @@ locale                   : "ko"
 rtl                      : # true, false (default) # turns direction of the page into right to left for RTL languages
 title                    : "ramona's devstory"
 title_separator          : "-"
-subtitle                 : "it'sme, ramona"
+subtitle                 : "박제나"
 description              : "내일의 후회가 오늘이 되지 않도록"
 url                      : "rawonax.github.io" # the base hostname & protocol for your site, e.g. "https://example.com"`
 baseurl                  : ""
 repository               : "rawonax/rawonax.github.io"
 teaser                   : "profile/avatar.png" # path of teaser image to display in the masthead, e.g. "/assets/images/88x88.png"
 logo                     : "profile/avatar.png"
-masthead_title           : "rawonax"
+masthead_title           : "rawmona"
 breadcrumbs              : true
 words_per_minute         : 200
 enable_copy_code_button  : true
@@ -95,8 +95,6 @@ facebook:
   app_id                 :
   publisher              :
 og_image                 : # Open Graph/Twitter default site image
-# For specifying social profiles
-# - https://developers.google.com/structured-data/customize/social-profiles
 social:
   type                   : # Person or Organization (defaults to Person)
   name                   : # If the user or organization name differs from the site's name
@@ -112,10 +110,10 @@ analytics:
 
 # Site Author
 author:
-  name             : "ramona"
-  avatar           : "profile/avatar.jpg"
+  name             : "박제나"
+  avatar           : "profile/avatar.png"
   bio              : "오늘의 후회가 내일이 되지 않도록"
-  location         : "Somewhere"
+  location         : "South korea"
   email            : "mailto:rawonax7@gmail.com"
   links:
     - label: "Email"

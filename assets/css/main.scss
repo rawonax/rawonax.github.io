@@ -24,28 +24,5 @@ search: false
   font-size: 0.9rem;
 }
 
-// 팬톤 13-4201 Cloud Blue 테마 색상
-$cloud-blue: #C6D6E3;
 
-// 사이드바 배경 색상
-.sidebar {
-  background-color: $cloud-blue !important;
-}
-
-// 네비게이션 바 배경 색상
-.masthead {
-  background-color: $cloud-blue !important;
-}
-
-.site-nav, .masthead, .sidebar {
-    background-color: $cloud-blue !important;
-  }
-
-.sidebar, .masthead {
-    color: #222; // 어두운 회색
-  }
-  
-.sidebar a, .masthead a {
-    color: #222;
-  }
   
