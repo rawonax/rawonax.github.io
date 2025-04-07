@@ -1,8 +1,6 @@
 ---
 title: "사진 한 장으로 아이피 추적하기1 - 방법을 찾아보자"
-categories: [security]
-tags:
-  - ects
+categories : [sec]
 date: 2025-04-01
 ---
 # 📸 사진 한 장으로 아이피를 추적해보자!

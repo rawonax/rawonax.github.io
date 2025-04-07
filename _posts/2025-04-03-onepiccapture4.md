@@ -1,8 +1,7 @@
 ---
 title: "사진 한 장으로 아이피 추적하기4 -결론과 총정리"
-categories: [security]
-tags:
-  - ects
+categories: [sec]
+
 date: 2025-04-03
 ---
 ---
