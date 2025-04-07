@@ -1,8 +1,12 @@
 ---
-title: "react/react-native"
+title: "frontend"
 layout: archive
-permalink: /categories/reactive/
+permalink: /categories/frontend/
 taxonomy: category
 category: dev
 entries_layout: list
+sidebar:
+  nav: "main"
 ---
+
+{% include category-list.html %}

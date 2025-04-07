@@ -4,17 +4,62 @@ layout: archive
 
 {{ content }}
 
-<h3 class="archive__subtitle">{{ site.data.ui-text[site.locale].recent_posts | default: "Recent Posts" }}</h3>
+<div class="home-content" style="max-width: 1000px; margin: 0 auto; padding: 2rem; font-size: 0.9rem;">
 
-{% if paginator %}
-  {% assign posts = paginator.posts %}
-{% else %}
-  {% assign posts = site.posts %}
-{% endif %}
+  <h1 style="text-align: center; font-size: 1rem;">🍃 안녕하세요, 박제나입니다! 🍃</h1>
 
-{% assign entries_layout = page.entries_layout | default: 'list' %}
-<div class="entries-{{ entries_layout }}">
-  {% include documents-collection.html entries=posts type=entries_layout %}
+  <p style="text-align: center; line-height: 1.6;">
+    🎂 2003년 8월 16일생<br>
+    💻 <strong>React / React Native / Node.js</strong> 개발자, 박제나입니다.<br>
+    🛡️ <strong>정보보안</strong>도 가끔 다룹니다<br>
+    🌍 <strong>kor</strong> <strong>eng</strong>, <strong>chinese</strong>
+  </p>
+
+  <h2 style="text-align: center;">🌟 기술 스택</h2>
+
+  <div style="display: flex; justify-content: center; gap: 40px; flex-wrap: wrap; text-align: center;">
+    <!-- 프론트엔드 -->
+    <div>
+      <h3>💻 프론트엔드</h3>
+      <p>
+        <img src="https://img.shields.io/badge/-React-61DAFB?style=flat-square&logo=react&logoColor=black">
+        <img src="https://img.shields.io/badge/-React%20Native-61DAFB?style=flat-square&logo=react&logoColor=black">
+        <img src="https://img.shields.io/badge/-Next.js-000000?style=flat-square&logo=next.js">
+      </p>
+    </div>
+
+    <!-- 백엔드 -->
+    <div>
+      <h3>🔧 백엔드</h3>
+      <p>
+        <img src="https://img.shields.io/badge/-Node.js-339933?style=flat-square&logo=node.js&logoColor=white">
+        <img src="https://img.shields.io/badge/-Express-000000?style=flat-square&logo=express&logoColor=white">
+      </p>
+    </div>
+
+    <!-- 데이터베이스 & 인프라 -->
+    <div>
+      <h3>🗃️ 데이터베이스 & 인프라</h3>
+      <p>
+        <img src="https://img.shields.io/badge/-MongoDB-47A248?style=flat-square&logo=mongodb&logoColor=white">
+        <img src="https://img.shields.io/badge/-Firebase-FFCA28?style=flat-square&logo=firebase&logoColor=black">
+        <img src="https://img.shields.io/badge/-MySQL-4479A1?style=flat-square&logo=mysql&logoColor=white">
+        <img src="https://img.shields.io/badge/-MariaDB-003545?style=flat-square&logo=mariadb&logoColor=white">
+      </p>
+    </div>
+
+    <!-- 도구들 -->
+    <div>
+      <h3>🛠️ 좋아하는 도구들</h3>
+      <p>
+        <img src="https://img.shields.io/badge/-VSCode-007ACC?style=flat-square&logo=visual-studio-code">
+        <img src="https://img.shields.io/badge/-Git-F05032?style=flat-square&logo=git&logoColor=white">
+        <img src="https://img.shields.io/badge/-Figma-F24E1E?style=flat-square&logo=figma&logoColor=white">
+      </p>
+    </div>
+  </div>
+
+
 </div>
 
-{% include paginator.html %}
+<!-- 🔥 GitHub 활동 그래프: 오른쪽 중앙 고정 -->

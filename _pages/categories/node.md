@@ -1,7 +1,7 @@
 ---
-title: "node.js"
+title: "node"
 layout: archive
-permalink: /categories/nodejs/
+permalink: /categories/node/
 taxonomy: category
 category: dev
 entries_layout: list

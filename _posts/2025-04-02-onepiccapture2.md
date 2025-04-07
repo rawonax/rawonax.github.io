@@ -1,5 +1,5 @@
 ---
-title: "사진 한 장으로 아이피 추적하기3- webrtc"
+title: "사진 한 장으로 아이피 추적하기 2- webrtc"
 categories: [sec]
 
 date: 2025-04-02

@@ -10,18 +10,18 @@ search: false
 
 // 📝 Custom Font Size for Post Content
 .page__content {
-  font-size: 0.87em; // adjust as you like
-  line-height: 2.0;
+  font-size: 0.77rem; // adjust as you like
+  line-height: 1.5;
 }
 
 .page__content h1 {
-  font-size: 1.1rem;
-}
-.page__content h2 {
   font-size: 1.0rem;
 }
-.page__content h3 {
+.page__content h2 {
   font-size: 0.9rem;
+}
+.page__content h3 {
+  font-size: 0.8rem;
 }
 
 

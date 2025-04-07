@@ -1,7 +1,7 @@
 ---
-title: "sec"
+title: "til"
 layout: archive
-permalink: /categories/sec/
+permalink: /categories/til/
 taxonomy: category
 category: sec
 entries_layout: list
