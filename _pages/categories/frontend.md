@@ -1,5 +1,5 @@
 ---
-title: "frontend"
+title: "FRONTEND"
 layout: archive
 permalink: /categories/frontend/
 taxonomy: category

@@ -4,5 +4,7 @@ layout: category  # 또는 layout: archive (둘 중 현재 코드에 맞는 걸�
 permalink: /categories/diary/
 taxonomy: diary
 entries_layout: list
+sidebar:
+  nav: "main"
 ---
 {% include category-list.html %}
