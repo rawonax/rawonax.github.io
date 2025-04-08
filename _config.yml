@@ -24,9 +24,9 @@ description              : "내일의 후회가 오늘이 되지 않도록"
 url                      : "rawonax.github.io" # the base hostname & protocol for your site, e.g. "https://example.com"`
 baseurl                  : ""
 repository               : "rawonax/rawonax.github.io"
-teaser                   : "profile/avatar.png"
+teaser                   : "profile/logo.png"
  # path of teaser image to display in the masthead, e.g. "/assets/images/88x88.png"
-logo                     : "profile/avatar.png"
+logo                     : "profile/logo.png"
 masthead_title           : "rawmona"
 breadcrumbs              : true
 words_per_minute         : 200
