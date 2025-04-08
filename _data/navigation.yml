@@ -2,10 +2,8 @@ main:
   - title: "Home"
     url: /
 
-  - title: "ect"
-    url: /categories/ect/
-  - title: "diary"
-    url: /categories/diary/
+
+
   - title: "sec"
     url: /categories/sec/
   - title: "til"
@@ -14,3 +12,7 @@ main:
     url: /categories/node/
   - title: "frontend"
     url: /categories/frontend/
+  - title: "ect"
+    url: /categories/ect/  
+  - title: "diary"
+    url: /categories/diary/
