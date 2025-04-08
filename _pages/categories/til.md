@@ -1,7 +1,7 @@
 ---
 title: "TIL"
 permalink: /categories/til/
-taxonomy: category
+taxonomy: til
 entries_layout: list
 layout: category 
 sidebar:
