@@ -24,8 +24,8 @@ description              : "내일의 후회가 오늘이 되지 않도록"
 url                      : "rawonax.github.io" # the base hostname & protocol for your site, e.g. "https://example.com"`
 baseurl                  : ""
 repository               : "rawonax/rawonax.github.io"
-teaser                   : "profile/avatar.png" # path of teaser image to display in the masthead, e.g. "/assets/images/88x88.png"
-logo                     : "profile/avatar.png"
+teaser                   : "profile/avatar.jpg" # path of teaser image to display in the masthead, e.g. "/assets/images/88x88.png"
+logo                     : "profile/avatar.jpg"
 masthead_title           : "rawmona"
 breadcrumbs              : true
 words_per_minute         : 200
@@ -111,7 +111,7 @@ analytics:
 # Site Author
 author:
   name             : "박제나"
-  avatar           : "profile/avatar.jpeg"
+  avatar           : "profile/avatar.jpg"
   bio              : "오늘의 후회가 내일이 되지 않도록"
   location         : "South korea"
   email            : "mailto:rawonax7@gmail.com"
