@@ -1,5 +1,5 @@
 ---
-title: "til"
+title: "TIL"
 layout: archive
 permalink: /categories/til/
 taxonomy: category
