@@ -1,10 +1,9 @@
 ---
 title: "TIL"
-layout: archive
 permalink: /categories/til/
 taxonomy: category
-category: sec
 entries_layout: list
+layout: category 
 sidebar:
   nav: "main"
 ---
