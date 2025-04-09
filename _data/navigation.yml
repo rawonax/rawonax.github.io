@@ -6,8 +6,6 @@ main:
 
   - title: "sec"
     url: /categories/sec/
-  - title: "til"
-    url: /categories/til/
   - title: "node"
     url: /categories/node/
   - title: "frontend"
