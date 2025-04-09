@@ -6,6 +6,7 @@ entries_layout: list
 layout: category 
 sidebar:
   nav: "main"
+category: sec
 ---
 {% include category-list.html %}
 
