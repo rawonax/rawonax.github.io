@@ -2,8 +2,7 @@
 title: "FRONTEND"
 layout: archive
 permalink: /categories/frontend/
-taxonomy: category
-category: dev
+taxonomy: frontend
 entries_layout: list
 sidebar:
   nav: "main"
