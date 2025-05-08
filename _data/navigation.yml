@@ -10,7 +10,7 @@ main:
     url: /categories/node/
   - title: "frontend"
     url: /categories/frontend/
-  - title: "ect"
-    url: /categories/ect/  
+  - title: "ormi"
+    url: /categories/ormi/  
   - title: "diary"
     url: /categories/diary/
