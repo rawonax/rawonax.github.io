@@ -1,8 +1,8 @@
 ---
-title: "ECT"
-layout: archive
-permalink: /categories/ect/
-taxonomy: category
+title: "ORMI"
+layout: category
+permalink: /categories/ormi/
+taxonomy: ormi
 category: ect
 entries_layout: list
 sidebar:
