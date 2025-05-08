@@ -4,13 +4,13 @@ main:
 
 
 
-  - title: "sec"
-    url: /categories/sec/
-  - title: "node"
-    url: /categories/node/
   - title: "frontend"
     url: /categories/frontend/
   - title: "ormi"
     url: /categories/ormi/  
   - title: "diary"
-    url: /categories/diary/
+    url: /categories/diary/ 
+  - title: "sec"
+    url: /categories/sec/
+  - title: "node"
+    url: /categories/node/
