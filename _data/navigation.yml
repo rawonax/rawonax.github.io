@@ -14,3 +14,5 @@ main:
     url: /categories/sec/
   - title: "node"
     url: /categories/node/
+  - title: "today"
+    url: /categories/today/
