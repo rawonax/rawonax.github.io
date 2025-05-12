@@ -1,7 +1,7 @@
 ---
 title: "[html/css] transform과 transition으로 살아있는 UI 만들기"
 date: 2025-05-12
-categories: [CSS, Teaching, Animation]
+categories: [ormi]
 ---
 
 ## ✨ 오늘 수업 요약: transform + transition
