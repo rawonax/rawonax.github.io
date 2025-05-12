@@ -1,5 +1,5 @@
 ---
-title: "[html/css반 추가교안] cursor에 관하여  
+title: "[html/css반 추가교안] cursor에 관하여 "
 categories: [ormi]
 date: 2025-05-12
 ---
