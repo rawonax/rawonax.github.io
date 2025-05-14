@@ -2,7 +2,6 @@
 title: "[html/css] 키프레임"
 date: 2025-05-13
 categories: [ormi]
-layout: post
 ---
 
 
