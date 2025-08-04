@@ -51,32 +51,4 @@ search: false
   font-size: 0.8rem;
 }
 
-// 🧱 Custom Navigation Dark Theme
-nav,
-.navbar,
-.site-nav,
-.mm-navbar,
-.page__nav,
-header {
-  background-color: #1e1e1e !important;
-  color: #ffffff !important;
-  border-bottom: 1px solid #333;
-}
-
-// 🧩 Navigation Links
-nav a,
-.site-nav a,
-.mm-navbar a {
-  color: #cccccc !important;
-  text-decoration: none;
-  padding: 0.5rem 1rem;
-  display: inline-block;
-  transition: color 0.2s ease;
-}
-
-nav a:hover,
-.site-nav a:hover,
-.mm-navbar a:hover {
-  color: #ffffff !important;
-}
 
