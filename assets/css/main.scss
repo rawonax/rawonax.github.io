@@ -1,7 +1,7 @@
 ---
 search: false
 ---
-@charset "utf-8";
+
 
 @import "minimal-mistakes/skins/{{ site.minimal_mistakes_skin | default: 'default' }}";
 @import "minimal-mistakes";
@@ -22,4 +22,24 @@ search: false
   font-size: 0.8rem;
 }
 
+/* 모바일에서 greedy-nav의 메뉴 항목 감추고 햄버거만 보이게 */
+@media screen and (max-width: 768px) {
+  .greedy-nav .visible-links {
+    display: none !important;  // 메뉴 항목 숨김
+  }
 
+  .greedy-nav .hidden-links {
+    display: block !important; // 햄버거 드롭다운은 보이게
+  }
+
+  .greedy-nav .menu-toggle {
+    display: block !important;
+  }
+}
+
+/* 햄버거 메뉴 스타일 커스터마이징 (선택사항) */
+.greedy-nav .menu-toggle {
+  color: #fff;
+  font-size: 1.3rem;
+  padding: 0.4rem 0.8rem;
+}
