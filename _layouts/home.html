@@ -2,41 +2,81 @@
 layout: archive
 ---
 
-<div class="home-content" style="max-width: 1000px; margin: 0 auto; padding: 2rem; font-size: 0.6rem; font-family: sans-serif;">
-  <h1 style="text-align: center; font-size: 1.2rem;">🍃 안녕하세요, 박제나입니다! 🍃</h1>
+<div class="home-content-wrapper">
+  <nav class="navbar">
+    <h1 style="font-size: 1rem; color: white;">🌐 Jena’s Dev Site</h1>
+  </nav>
 
-  <p style="text-align: center; line-height: 1.6;">
-    💻 <strong>React / React Native / Node.js</strong> 개발자, 박제나입니다.<br>
-    🛡️ <strong>정보보안</strong>도 가끔 다룹니다<br>
-    🌍 <strong>kor</strong> <strong>eng</strong>, <strong>chinese</strong>
-  </p>
+  <div class="home-content">
+    <h1>🍃 안녕하세요, 박제나입니다! 🍃</h1>
+    <p>
+      💻 <strong>React / React Native / Node.js</strong> 개발자, 박제나입니다.<br />
+      🛡️ <strong>정보보안</strong>도 가끔 다룹니다<br />
+      🌍 <strong>kor</strong> <strong>eng</strong>, <strong>chinese</strong>
+    </p>
 
-  <h2 style="text-align: center; font-size: 0.8rem;">🌟 기술 스택</h2>
+    <h2>🌟 기술 스택</h2>
 
-  <div class="skill-grid">
-    <div class="skill-card" data-category="프론트엔드" data-items="React, React Native, Next.js">💻 프론트엔드</div>
-    <div class="skill-card" data-category="백엔드" data-items="Node.js, Express">🔧 백엔드</div>
-    <div class="skill-card" data-category="데이터베이스 & 인프라" data-items="MongoDB, Firebase, MySQL, MariaDB">🗃️ 데이터베이스 & 인프라</div>
-    <div class="skill-card" data-category="좋아하는 도구들" data-items="VSCode, Git, Figma">🛠️ 좋아하는 도구들</div>
+    <div class="skill-grid">
+      <div class="skill-card" data-category="프론트엔드" data-items="React, React Native, Next.js">💻 프론트엔드</div>
+      <div class="skill-card" data-category="백엔드" data-items="Node.js, Express">🔧 백엔드</div>
+      <div class="skill-card" data-category="데이터베이스 & 인프라" data-items="MongoDB, Firebase, MySQL, MariaDB">🗃️ 데이터베이스 & 인프라</div>
+      <div class="skill-card" data-category="좋아하는 도구들" data-items="VSCode, Git, Figma">🛠️ 좋아하는 도구들</div>
+    </div>
   </div>
-</div>
 
-<!-- 모달 -->
-<div id="modal" class="modal hidden">
-  <div class="modal-content">
-    <h3 id="modal-title"></h3>
-    <ul id="modal-list"></ul>
-    <button id="modal-close">닫기</button>
+  <!-- 모달 -->
+  <div id="modal-overlay" class="modal-overlay hidden">
+    <div id="modal-content" class="modal-content">
+      <h3 id="modal-title"></h3>
+      <ul id="modal-list"></ul>
+      <button id="modal-close">닫기</button>
+    </div>
   </div>
 </div>
 
 <style>
+/* 기본 레이아웃 */
+body {
+  margin: 0;
+  font-family: sans-serif;
+  background-color: #1e1e1e;
+  color: #fff;
+}
+.navbar {
+  position: sticky;
+  top: 0;
+  padding: 1rem 2rem;
+  background-color: #222;
+  z-index: 1001;
+}
+.home-content-wrapper {
+  position: relative;
+  z-index: 0;
+}
+.home-content {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 2rem;
+  font-size: 0.8rem;
+  text-align: center;
+}
+h1 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+}
+h2 {
+  font-size: 1.2rem;
+  margin-top: 2rem;
+}
+
+/* 카드 스타일 */
 .skill-grid {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   gap: 20px;
-  margin-top: 2rem;
+  margin-top: 1.5rem;
 }
 .skill-card {
   background-color: #333;
@@ -47,33 +87,46 @@ layout: archive
   width: 180px;
   cursor: pointer;
   transition: transform 0.2s, box-shadow 0.2s;
+  z-index: 0;
 }
 .skill-card:hover {
   transform: scale(1.05);
   box-shadow: 0 5px 15px rgba(0,0,0,0.3);
 }
-.modal.hidden {
+
+/* 모달 오버레이 */
+.modal-overlay.hidden {
   display: none;
 }
-.modal {
+.modal-overlay {
   position: fixed;
   top: 0;
   left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0,0,0,0.5);
+  z-index: 2000;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0,0,0,0.6);
   display: flex;
-  justify-content: center;
   align-items: center;
-  z-index: 999;
+  justify-content: center;
 }
+
+/* 모달 콘텐츠 */
 .modal-content {
   background: white;
+  color: black;
   padding: 2rem;
   border-radius: 16px;
   width: 300px;
+  max-width: 90%;
   text-align: center;
+  animation: scaleIn 0.3s ease;
 }
+@keyframes scaleIn {
+  from { transform: scale(0.8); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
+}
+
 #modal-close {
   margin-top: 1rem;
   padding: 0.5rem 1rem;
@@ -87,7 +140,7 @@ layout: archive
 
 <script>
   const cards = document.querySelectorAll('.skill-card');
-  const modal = document.getElementById('modal');
+  const modal = document.getElementById('modal-overlay');
   const modalTitle = document.getElementById('modal-title');
   const modalList = document.getElementById('modal-list');
   const closeBtn = document.getElementById('modal-close');
