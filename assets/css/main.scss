@@ -24,18 +24,19 @@ search: true
 
 /* 모바일에서 greedy-nav의 메뉴 항목 감추고 햄버거만 보이게 */
 @media screen and (max-width: 768px) {
-  .visible-links {
-    display: none !important;
+  .greedy-nav .visible-links {
+    display: none !important; // 메뉴 탭 숨김
   }
 
   .greedy-nav .menu-toggle {
     display: block !important;
     position: absolute;
+    top: 1rem;
     right: 1rem;
-    top: 0.5rem;
+    font-size: 1.8rem;
+    z-index: 9999;
     background: none;
-    color: white;
     border: none;
-    font-size: 1.5rem;
+    color: #333;
   }
 }
