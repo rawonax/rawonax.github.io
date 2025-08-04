@@ -249,3 +249,37 @@
     </ul>
   </div>
 </div>
+
+
+  <style>
+    .author__avatar {
+      width: 150px;
+      height: 150px;
+      margin: 0 auto 1rem;
+      box-shadow: none !important;
+    }
+
+    .author__avatar img,
+    .author__avatar .u-photo {
+      width: 100%;
+      height: 100%;
+      border-radius: 50%;
+      object-fit: cover;
+      box-shadow: none !important;
+      border: none !important;
+    }
+  </style>
+
+
+{% if author.github %}
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+      const githubLink = document.querySelector('.author__urls a[href*="github.com"]');
+      if (githubLink) {
+        githubLink.setAttribute('target', '_blank');
+        githubLink.setAttribute('rel', 'noopener noreferrer');
+      }
+    });
+  </script>
+{% endif %}
+

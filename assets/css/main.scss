@@ -6,6 +6,7 @@ search: true
 @import "minimal-mistakes/skins/{{ site.minimal_mistakes_skin | default: 'default' }}";
 @import "minimal-mistakes";
 
+
 // 사용자 정의 스타일
 .page__content {
   font-size: 0.77rem;

@@ -6,21 +6,23 @@ layout: default
 
 <section class="freelance-section">
   <div class="freelance-profile">
-    <img src="../../profile/avatar.png" alt="박제나 프로필 사진" class="freelance-avatar">
-    <h1>👋 hi, i'm Jena Park</h1>
-    <p>7년차 React / Node.js 기반 풀스택 개발자입니다.<br>
+   <img src="../../profile/profile.gif" alt="박제나 프로필 사진" class="freelance-avatar fade-item delay-1">
+    <h1 class="fade-item delay-2">👋 hi, i'm Jena Park</h1>
+    <p class="fade-item delay-3">7년차 React / Node.js 기반 풀스택 개발자입니다.<br>
       ES6+ 기반의 구조 설계부터 배포까지 모두 가능합니다.</p>
 
-    <p class="freelance-tags">
+   <p class="freelance-tags fade-item delay-4">
       <span>#React</span>
       <span>#Next.js</span>
       <span>#Node.js</span>
       <span>#AWS</span>
       <span>#웹 보안</span>
     </p>
-    <div>
-    <button id="freelance-btn" class="btn--freelance">💼 외주 문의하기</button>
+    <div class="fade-item delay-5">
+      <button id="freelance-btn" class="btn--freelance">💼 외주 문의하기</button>
+    </div>
   </div>
+
 </section>
   <div id="freelance-modal" class="freelance-modal">
     <div class="freelance-modal-content">
@@ -48,7 +50,29 @@ layout: default
   padding-bottom: 0;
   text-align: center;
   font-family: 'Pretendard', sans-serif;
+
 }
+/* 기본 애니메이션 효과 */
+.fade-item {
+  opacity: 0;
+  transform: translateY(-20px);
+  animation: fadeInDown 0.7s ease-in-out forwards;
+}
+
+/* 키프레임 정의 */
+@keyframes fadeInDown {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* 딜레이 순차 적용 */
+.delay-1 { animation-delay: 0.2s; }
+.delay-2 { animation-delay: 0.4s; }
+.delay-3 { animation-delay: 0.6s; }
+.delay-4 { animation-delay: 0.8s; }
+.delay-5 { animation-delay: 1s; }
 
 .btn--freelance {
   background-color: #d9d9d9;
@@ -77,12 +101,11 @@ layout: default
 }
 
 .freelance-avatar {
-  width: 120px;
-  height: 120px;
+  width: 150px;
+  height: 150px;
   border-radius: 50%;
   object-fit: cover;
-  box-shadow: 0 0 10px rgba(0,0,0,0.1);
-  margin-bottom: 1rem;
+  margin-bottom: 0.5rem;
 }
 
 .freelance-profile h1 {
