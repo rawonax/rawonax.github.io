@@ -1,0 +1,71 @@
+/* 파일: assets/css/custom.css */
+
+/* 모달 전체 레이어 */
+.freelance-modal {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0,0,0,0.6);
+}
+
+/* 모달 창 */
+.freelance-modal-content {
+  background-color: #fff;
+  margin: 10% auto;
+  padding: 2rem;
+  border-radius: 10px;
+  width: 90%;
+  max-width: 500px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+  font-family: 'Pretendard', sans-serif;
+}
+
+.freelance-modal-content h2 {
+  margin-top: 0;
+  font-size: 1.5rem;
+  text-align: center;
+}
+
+.freelance-modal-content label {
+  display: block;
+  margin-top: 1rem;
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+.freelance-modal-content input,
+.freelance-modal-content textarea {
+  width: 100%;
+  padding: 0.7rem;
+  margin-top: 0.4rem;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  font-size: 0.9rem;
+}
+
+.freelance-modal-content button {
+  margin-top: 1.5rem;
+  width: 100%;
+  padding: 0.8rem;
+  font-size: 1rem;
+  background-color: #444;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.freelance-modal-content button:hover {
+  background-color: #222;
+}
+
+.freelance-close {
+  float: right;
+  font-size: 1.8rem;
+  cursor: pointer;
+}

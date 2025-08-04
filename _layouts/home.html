@@ -1,69 +1,243 @@
 ---
-layout: archive
+layout: default
 ---
 
-<!-- 외부 CSS 링크 추가 -->
-<link rel="stylesheet" href="../assets/css/home.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
-<div class="home-content-wrapper">
+<section class="freelance-section">
+  <div class="freelance-profile">
+    <img src="../../profile/avatar.png" alt="박제나 프로필 사진" class="freelance-avatar">
+    <h1>👋 hi, i'm Jena Park</h1>
+    <p>7년차 React / Node.js 기반 풀스택 개발자입니다.<br>
+      ES6+ 기반의 구조 설계부터 배포까지 모두 가능합니다.</p>
 
-  <div class="home-content">
-    <h1>🍃 안녕하세요, 박제나입니다! 🍃</h1>
-    <p>
-      💻 <strong>React / React Native / Node.js</strong> 개발자, 박제나입니다.<br />
-      🛡️ <strong>정보보안</strong>도 가끔 다룹니다<br />
-      🌍 <strong>kor</strong> <strong>eng</strong>, <strong>chinese</strong>
+    <p class="freelance-tags">
+      <span>#React</span>
+      <span>#Next.js</span>
+      <span>#Node.js</span>
+      <span>#AWS</span>
+      <span>#웹 보안</span>
     </p>
+</section>
+<section class="author-icons">
+  <div id="freelance-modal" class="freelance-modal">
+    <div class="freelance-modal-content">
+      <span class="freelance-close">&times;</span>
+      <h2>💼 외주 문의하기</h2>
+      <form action="mailto:your@email.com" method="POST" enctype="text/plain">
+        <label for="name">이름</label>
+        <input type="text" id="name" name="name" required>
 
-    <h2>🌟 기술 스택</h2>
+        <label for="email">이메일</label>
+        <input type="email" id="email" name="email" required>
 
-    <div class="skill-grid">
-      <div class="skill-card" data-category="fe" data-items="React, React Native, Next.js">💻 fe</div>
-      <div class="skill-card" data-category="be" data-items="Node.js, Express">🔧 be</div>
-      <div class="skill-card" data-category="db" data-items="MongoDB, Firebase, MySQL, MariaDB">🗃️ db</div>
-      <div class="skill-card" data-category="tools" data-items="VSCode, Git, Figma">🛠️ tools</div>
+        <label for="desc">프로젝트 내용</label>
+        <textarea id="desc" name="desc" rows="5" required></textarea>
+
+        <button type="submit" class="btn btn--inverse">보내기</button>
+      </form>
     </div>
   </div>
+  <p class="author-location"><i class="fas fa-map-marker-alt"></i> comming soon, US NY</p>
 
-  <!-- 모달 -->
-  <div id="modal-overlay" class="modal-overlay hidden">
-    <div id="modal-content" class="modal-content">
-      <h3 id="modal-title"></h3>
-      <ul id="modal-list"></ul>
-      <button id="modal-close">닫기</button>
-    </div>
-  </div>
-</div>
+  <ul class="author-social">
+    <li><a href="mailto:rawonax7@gmail.com" target="_blank"><i class="fas fa-envelope"></i></a></li>
+    <li><a href="https://github.com/rawonax" target="_blank"><i class="fab fa-github"></i></a></li>
+    <li><a href="https://www.instagram.com/ffthome" target="_blank"><i class="fab fa-instagram"></i></a></li>
+  </ul>
+</section>
+<style>
+.freelance-section {
+  padding: 4rem 1rem;
+  text-align: center;
+  font-family: 'Pretendard', sans-serif;
+}
+
+.freelance-profile {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.freelance-avatar {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  margin-bottom: 1rem;
+}
+
+.freelance-profile h1 {
+  font-size: 2rem;
+  font-weight: 700;
+  margin: 1rem 0 0.5rem;
+}
+
+.freelance-profile p {
+  font-size: 1rem;
+  color: #555;
+}
+
+.freelance-tags {
+  margin-top: 1rem;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.freelance-tags span {
+  background: linear-gradient(135deg, #d1d1d1, #f1f1f1);
+  border: 1px solid #ccc;
+  color: #333;
+  padding: 0.3rem 0.8rem;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  transition: all 0.3s ease;
+}
+
+.freelance-tags span:hover {
+  background: #333;
+  color: #fff;
+}
+
+/* Modal */
+.freelance-modal {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0,0,0,0.6);
+}
+
+.freelance-modal-content {
+  background-color: #fff;
+  margin: 10% auto;
+  padding: 2rem;
+  border-radius: 10px;
+  width: 90%;
+  max-width: 500px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+}
+
+.freelance-modal-content h2 {
+  margin-top: 0;
+  font-size: 1.5rem;
+  text-align: center;
+}
+
+.freelance-modal-content label {
+  display: block;
+  margin-top: 1rem;
+  font-weight: 600;
+  font-size: 0.9rem;
+  text-align: left;
+}
+
+.freelance-modal-content input,
+.freelance-modal-content textarea {
+  width: 100%;
+  padding: 0.7rem;
+  margin-top: 0.4rem;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  font-size: 0.9rem;
+}
+
+.freelance-modal-content button {
+  margin-top: 1.5rem;
+  width: 100%;
+  padding: 0.8rem;
+  font-size: 1rem;
+  background-color: #444;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.freelance-modal-content button:hover {
+  background-color: #222;
+}
+
+.freelance-close {
+  float: right;
+  font-size: 1.8rem;
+  cursor: pointer;
+}
+.author-icons {
+  text-align: center;
+  padding: 3rem 1rem;
+  font-family: 'Pretendard', sans-serif;
+  background-color: #f9f9f9;
+  border-radius: 12px;
+  max-width: 600px;
+  margin: 3rem auto 0 auto;
+}
+
+.author-avatar {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 1rem;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.08);
+}
+
+.author-name {
+  font-size: 1.4rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.author-bio {
+  font-size: 0.95rem;
+  color: #666;
+  margin-bottom: 0.3rem;
+}
+
+.author-location {
+  font-size: 0.9rem;
+  color: #999;
+}
+
+.author-social {
+  list-style: none;
+  padding: 0;
+  margin-top: 1rem;
+  display: flex;
+  justify-content: center;
+  gap: 1.2rem;
+}
+
+.author-social li a {
+  font-size: 1.5rem;
+  color: #444;
+  transition: color 0.3s ease;
+}
+
+.author-social li a:hover {
+  color: #000;
+}
+
+</style>
 
 <script>
-  const cards = document.querySelectorAll('.skill-card');
-  const modal = document.getElementById('modal-overlay');
-  const modalTitle = document.getElementById('modal-title');
-  const modalList = document.getElementById('modal-list');
-  const closeBtn = document.getElementById('modal-close');
+document.getElementById('freelance-btn').addEventListener('click', function () {
+  document.getElementById('freelance-modal').style.display = 'block';
+});
 
-  cards.forEach(card => {
-    card.addEventListener('click', () => {
-      const category = card.dataset.category;
-      const items = card.dataset.items.split(',').map(item => item.trim());
+document.querySelector('.freelance-close').addEventListener('click', function () {
+  document.getElementById('freelance-modal').style.display = 'none';
+});
 
-      modalTitle.textContent = category;
-      modalList.innerHTML = '';
-      items.forEach(item => {
-        const li = document.createElement('li');
-        li.textContent = item;
-        modalList.appendChild(li);
-      });
-
-      modal.classList.remove('hidden');
-    });
-  });
-
-  closeBtn.addEventListener('click', () => {
-    modal.classList.add('hidden');
-  });
-
-  window.addEventListener('click', (e) => {
-    if (e.target === modal) modal.classList.add('hidden');
-  });
+window.addEventListener('click', function (event) {
+  if (event.target === document.getElementById('freelance-modal')) {
+    document.getElementById('freelance-modal').style.display = 'none';
+  }
+});
 </script>

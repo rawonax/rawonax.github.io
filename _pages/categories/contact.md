@@ -3,31 +3,101 @@ layout: default
 title: "외주 문의하기"
 permalink: /contact/
 ---
-<!-- 외주 문의하기 버튼 -->
-<button id="freelance-btn" class="btn btn--primary">외주 문의하기</button>
 
-<!-- 외주 문의하기 모달 -->
-<div id="freelance-modal" class="freelance-modal">
-  <div class="freelance-modal-content">
-    <span class="freelance-close">&times;</span>
-    <h2>💼 외주 문의하기</h2>
-    <form action="mailto:your@email.com" method="POST" enctype="text/plain">
-      <label for="name">이름</label>
-      <input type="text" id="name" name="name" required>
+<section class="freelance-section">
+  <div class="freelance-profile">
+    <img src="../../profile/avatar.png" alt="박제나 프로필 사진" class="freelance-avatar">
+    <h1>👋 hi, i'm Jena Park</h1>
+    <p>7년차 React / Node.js 기반 풀스택 개발자입니다.<br>
+      ES6+ 기반의 구조 설계부터 배포까지 모두 가능합니다.</p>
 
-      <label for="email">이메일</label>
-      <input type="email" id="email" name="email" required>
+    <p class="freelance-tags">
+      <span>#React</span>
+      <span>#Next.js</span>
+      <span>#Node.js</span>
+      <span>#AWS</span>
+      <span>#웹 보안</span>
+    </p>
 
-      <label for="desc">프로젝트 내용</label>
-      <textarea id="desc" name="desc" rows="5" required></textarea>
-
-      <button type="submit" class="btn btn--inverse">보내기</button>
-    </form>
+    <button id="freelance-btn" class="btn btn--primary">외주 문의하기</button>
   </div>
-</div>
+
+  <div id="freelance-modal" class="freelance-modal">
+    <div class="freelance-modal-content">
+      <span class="freelance-close">&times;</span>
+      <h2>💼 외주 문의하기</h2>
+      <form action="mailto:your@email.com" method="POST" enctype="text/plain">
+        <label for="name">이름</label>
+        <input type="text" id="name" name="name" required>
+
+        <label for="email">이메일</label>
+        <input type="email" id="email" name="email" required>
+
+        <label for="desc">프로젝트 내용</label>
+        <textarea id="desc" name="desc" rows="5" required></textarea>
+
+        <button type="submit" class="btn btn--inverse">보내기</button>
+      </form>
+    </div>
+  </div>
+</section>
 
 <style>
-/* 모달 전체 레이어 */
+.freelance-section {
+  padding: 4rem 1rem;
+  text-align: center;
+  font-family: 'Pretendard', sans-serif;
+}
+
+.freelance-profile {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.freelance-avatar {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  margin-bottom: 1rem;
+}
+
+.freelance-profile h1 {
+  font-size: 2rem;
+  font-weight: 700;
+  margin: 1rem 0 0.5rem;
+}
+
+.freelance-profile p {
+  font-size: 1rem;
+  color: #555;
+}
+
+.freelance-tags {
+  margin-top: 1rem;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.freelance-tags span {
+  background: linear-gradient(135deg, #d1d1d1, #f1f1f1);
+  border: 1px solid #ccc;
+  color: #333;
+  padding: 0.3rem 0.8rem;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  transition: all 0.3s ease;
+}
+
+.freelance-tags span:hover {
+  background: #333;
+  color: #fff;
+}
+
+/* Modal */
 .freelance-modal {
   display: none;
   position: fixed;
@@ -40,7 +110,6 @@ permalink: /contact/
   background-color: rgba(0,0,0,0.6);
 }
 
-/* 모달 창 */
 .freelance-modal-content {
   background-color: #fff;
   margin: 10% auto;
@@ -49,7 +118,6 @@ permalink: /contact/
   width: 90%;
   max-width: 500px;
   box-shadow: 0 4px 20px rgba(0,0,0,0.2);
-  font-family: 'Pretendard', sans-serif;
 }
 
 .freelance-modal-content h2 {
@@ -63,6 +131,7 @@ permalink: /contact/
   margin-top: 1rem;
   font-weight: 600;
   font-size: 0.9rem;
+  text-align: left;
 }
 
 .freelance-modal-content input,
