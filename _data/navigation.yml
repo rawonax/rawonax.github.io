@@ -9,7 +9,3 @@ main:
     url: /categories/diary/ 
   - title: "sec"
     url: /categories/sec/
-  - title: "node"
-    url: /categories/node/
-  - title: "today"
-    url: /categories/today/
