@@ -36,7 +36,7 @@ classes: wide
     <div class="hero-content">
       <img src="/assets/images/jena-hero.gif" alt="Jena avatar" class="hero-avatar" />
       <h1 class="hero-title">Jena’s Playground</h1>
-      <p class="hero-sub">밝은 무채색 · 미니멀하지만 화려한 인터랙션</p>
+      <p class="hero-sub">한낱 검정고시생의 미국 취업 이야기</p>
     </div>
 
   </section>
@@ -46,29 +46,29 @@ classes: wide
     <div class="container">
       <h2 class="sec-title">Featured</h2>
       <div class="oncards">
-        <a class="card" href="/frontend/">
+        <a class="card" href="/categories/frontend/">
           <h3>Frontend</h3>
           <p>UI/UX, 성능, 애니메이션</p>
         </a>
-        <a class="card" href="/til/">
+        <a class="card" href="/categories/til/">
           <h3>TIL</h3>
           <p>하루를 흔든 삽질과 인사이트</p>
         </a>
-        <a class="card" href="/security/">
+        <a class="card" href="/categories//security/">
           <h3>Security</h3>
           <p>디버깅, 추적, 실험 노트</p>
         </a>
-        <a class="card" href="/diary/">
+        <a class="card" href="/categories//diary/">
           <h3>diary</h3>
           <p>잡다한 생각 공유</p>
         </a>
-        <a class="card" href="/node/">
+        <a class="card" href="/categories//node/">
           <h3>backend</h3>
           <p>노드/스프링 중 노드가 더 많이 올라갑니다</p>
         </a>
-        <a class="card" href="/somethingilearned">
-          <h3>오늘의 배움</h3>
-          <p>이것저것 잡다한 공부를 합니다</p>
+        <a class="card" href="/categories//today">
+          <h3>일상일기</h3>
+          <p>오늘의 일상을 올립니다</p>
         </a>
       </div>
     </div>
@@ -113,9 +113,21 @@ classes: wide
   --card-ease:cubic-bezier(.2,.8,.2,1); --card-dur:.45s;
 }
 
-.default_cursor_land {margin-top:0; margin-bottom:0;}
-.grid {height:800px; width:700px;}
-.hero-bg{height:700px; width:700px; !important;}
+.hero {
+  padding-bottom: 0 !important;
+  min-height: auto !important;
+  margin-bottom: 20px !important;
+}
+
+.section.section-light {
+  margin-top: 0 !important;
+  padding-top: 0 !important;
+  min-height: auto !important;
+  margin-bottom: 20px !important;
+}
+.snap.section.section-light.default_cursor_land {
+  height: 400px !important;
+}
 
 /* ---------- 스냅 ---------- */
 .snap-container{height:100%;scroll-snap-type:y mandatory;overflow-y:auto}
