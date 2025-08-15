@@ -1,36 +1,214 @@
+
 ---
+layout: default
+title: Home
+permalink: /
+classes: wide
 ---
 
-<!doctype html>
-{% include copyright.html %}
-<html lang="{{ site.locale | replace: "_", "-" | default: "en" }}" class="no-js">
-  <head>
-    {% include head.html %}
-    {% include head/custom.html %}
-  </head>
+<!-- ===== HOME (무채색, 스냅 스크롤) ===== -->
+<div class="snap-container">
 
-  <body class="layout--{{ page.layout | default: layout.layout }}{% if page.classes or layout.classes %}{{ page.classes | default: layout.classes | join: ' ' | prepend: ' ' }}{% endif %}" dir="{% if site.rtl %}rtl{% else %}ltr{% endif %}">
-    {% include_cached skip-links.html %}
-    {% include_cached masthead.html %}
-
-    <div class="initial-content">
-      {{ content }}
-      {% include after-content.html %}
+  <!-- HERO -->
+  <section class="snap hero">
+    <div class="hero-bg">
+      <div class="grid"></div>
+      <div class="ring"></div>
+      <div class="glow"></div>
     </div>
 
-    {% if site.search == true %}
-      <div class="search-content">
-        {% include_cached search/search_form.html %}
+    <div class="hero-content">
+      <img src="/assets/images/jena-hero.gif" alt="Jena avatar" class="hero-avatar" />
+      <h1 class="hero-title">Jena’s Playground</h1>
+      <p class="hero-sub">밝은 무채색 · 미니멀하지만 화려한 인터랙션</p>
+
+      <div class="hero-ctas">
+        <a class="ghost-btn" href="/categories/">Categories</a>
+        <a class="ghost-btn" href="/about/">About</a>
+        <button class="ghost-btn scroll-next" type="button">↓ Scroll</button>
       </div>
-    {% endif %}
-
-    <div id="footer" class="page__footer">
-      <footer>
-        {% include footer/custom.html %}
-        {% include_cached footer.html %}
-      </footer>
     </div>
 
-    {% include scripts.html %}
-  </body>
-</html>
+    <div class="mouse-indicator"><span></span></div>
+  </section>
+
+  <!-- FEATURED -->
+  <section class="snap section section-light">
+    <div class="container">
+      <h2 class="sec-title">Featured</h2>
+      <div class="cards">
+        <a class="card" href="/frontend/">
+          <h3>Frontend</h3>
+          <p>UI/UX, 성능, 애니메이션</p>
+        </a>
+        <a class="card" href="/til/">
+          <h3>TIL</h3>
+          <p>하루를 흔든 삽질과 인사이트</p>
+        </a>
+        <a class="card" href="/security/">
+          <h3>Security</h3>
+          <p>디버깅, 추적, 실험 노트</p>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- LATEST POSTS -->
+  <section class="snap section section-white">
+    <div class="container">
+      <h2 class="sec-title">Latest Posts</h2>
+      <div class="posts">
+        {%- assign latest = site.posts | slice: 0, 6 -%}
+        {%- for post in latest -%}
+          <a class="post" href="{{ post.url | relative_url }}">
+            <time>{{ post.date | date: "%Y.%m.%d" }}</time>
+            <h3>{{ post.title }}</h3>
+            <p>{{ post.excerpt | strip_html | truncate: 120 }}</p>
+          </a>
+        {%- endfor -%}
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT / FOOTER HERO -->
+  <section class="snap section section-glass">
+    <div class="container center">
+      <h2 class="sec-title">Let’s build something</h2>
+      <p class="muted">문의: <a href="mailto:rawonax7@gmail.com">rawonax7@gmail.com</a></p>
+      <div class="hero-ctas">
+        <a class="ghost-btn" href="https://github.com/rawonax">GitHub</a>
+        <button class="ghost-btn scroll-top" type="button">↑ Back to top</button>
+      </div>
+    </div>
+  </section>
+
+</div>
+
+<!-- ===== Styles (페이지 전용, 무채색·밝은 톤) ===== -->
+<style>
+:root{
+  --bg:#f6f7f9; --bg-contrast:#fff; --ink:#111; --muted:#6b7280;
+  --line:#e6e8ee; --accent:#cfd4dd; --shadow:0 10px 30px rgba(0,0,0,.08);
+}
+body{ background:var(--bg); }
+
+/* Snap */
+.snap-container{ height:100%; scroll-snap-type:y mandatory; overflow-y:auto; }
+.snap{ min-height:100vh; scroll-snap-align:start; position:relative; }
+
+/* Hero */
+.hero{ display:grid; place-items:center; padding:clamp(40px,8vh,100px) 20px; overflow:hidden; }
+.hero-bg .grid{ position:absolute; inset:0;
+  background:
+    linear-gradient(var(--line) 1px,transparent 1px) 0 0/26px 26px,
+    linear-gradient(90deg,var(--line) 1px,transparent 1px) 0 0/26px 26px;
+  opacity:.6; }
+.hero-bg .ring{ position:absolute; width:68vmin; height:68vmin; border-radius:50%;
+  background:radial-gradient(closest-side,#111 0 98%,transparent 99%);
+  opacity:.9; filter:drop-shadow(0 20px 40px rgba(0,0,0,.2)); transform:translateZ(0); }
+.hero-bg .glow{ position:absolute; width:120vmin; height:120vmin; border-radius:50%;
+  background:radial-gradient(circle at 50% 60%, rgba(255,255,255,.75), transparent 60%);
+  mix-blend-mode:screen; animation:float 8s ease-in-out infinite; pointer-events:none; }
+@keyframes float{0%,100%{transform:translateY(-6px)}50%{transform:translateY(6px)}}
+
+.hero-content{ text-align:center; position:relative; z-index:2; }
+.hero-avatar{ width:min(46vmin,320px); ;
+  animation:pop .9s cubic-bezier(.2,.9,.2,1) both; }
+@keyframes pop{0%{transform:translateY(10px) scale(.96);opacity:0}100%{transform:translateY(0) scale(1);opacity:1}}
+.hero-title{ margin:18px 0 6px; font-size:clamp(28px,4.2vw,52px); color:var(--ink); letter-spacing:.5px; }
+.hero-sub{ color:var(--muted); font-size:clamp(14px,1.8vw,18px); }
+
+.hero-ctas{ display:flex; gap:12px; justify-content:center; margin-top:18px; flex-wrap:wrap; }
+.ghost-btn{
+  border:1px solid var(--accent); padding:10px 16px; border-radius:999px;
+  background:linear-gradient(180deg,#fff,#f3f4f7); box-shadow:var(--shadow); color:#111; font-weight:600;
+  transition:transform .2s ease, box-shadow .2s ease, border-color .2s ease;
+}
+.ghost-btn:hover{ transform:translateY(-2px); box-shadow:0 12px 24px rgba(0,0,0,.12); border-color:#d7dbe2; }
+
+/* mouse hint */
+.mouse-indicator{ position:absolute; left:50%; bottom:18px; transform:translateX(-50%);
+  width:30px; height:54px; border:2px solid #cfd4dd; border-radius:20px; opacity:.8; }
+.mouse-indicator span{ position:absolute; left:50%; top:10px; width:6px; height:6px; background:#aab1bd; border-radius:50%;
+  transform:translateX(-50%); animation:wheel 1.8s ease-in-out infinite; }
+@keyframes wheel{0%{transform:translate(-50%,0);opacity:1}80%{transform:translate(-50%,16px);opacity:0}100%{opacity:0}}
+
+/* Sections */
+.section{ display:flex; align-items:center; }
+.section-light{ background:#f9fafb; }
+.section-white{ background:#fff; }
+.section-glass{
+  background:
+    radial-gradient(1200px 800px at 80% -20%, rgba(0,0,0,.06), transparent),
+    linear-gradient(180deg, rgba(255,255,255,.9), rgba(255,255,255,.8));
+  backdrop-filter: blur(6px);
+}
+.container{ width:min(1080px,92%); margin-inline:auto; }
+.center{text-align:center;}
+.sec-title{ font-size:clamp(22px,3.2vw,34px); margin-bottom:14px; color:#0f1115; }
+.muted{ color:var(--muted); }
+
+/* Cards */
+.cards{ display:grid; gap:16px; grid-template-columns:repeat(auto-fit, minmax(240px,1fr)); margin-top:10px; }
+.card{ display:block; padding:20px; border-radius:18px; background:var(--bg-contrast);
+  box-shadow:var(--shadow); color:#111; text-decoration:none; border:1px solid #eef0f3;
+  transition:transform .25s ease, box-shadow .25s ease, border-color .25s ease; }
+.card:hover{ transform:translateY(-6px); box-shadow:0 16px 40px rgba(0,0,0,.12); border-color:#e2e6ec; }
+
+/* Posts */
+.posts{ display:grid; gap:16px; grid-template-columns:repeat(auto-fit,minmax(280px,1fr)); }
+.post{ display:block; padding:18px; border-radius:16px; background:#fff; border:1px solid #eceff4; text-decoration:none; color:#111; box-shadow:var(--shadow);
+  transition:transform .2s ease, box-shadow .2s ease; }
+.post:hover{ transform:translateY(-4px); box-shadow:0 12px 28px rgba(0,0,0,.1); }
+.post time{ font-size:12px; color:var(--muted); }
+.post h3{ margin:6px 0 6px; font-size:18px; }
+
+/* tiny parallax */
+.hero:hover .hero-avatar{ transform:translateZ(0) scale(1.01); }
+</style>
+
+<!-- ===== Scripts (패럴랙스, 스냅 이동) ===== -->
+<script>
+(function(){
+  const ring = document.querySelector('.hero-bg .ring');
+  const glow = document.querySelector('.hero-bg .glow');
+  const hero = document.querySelector('.hero');
+  if (hero && ring && glow){
+    hero.addEventListener('pointermove', (e)=>{
+      const rect = hero.getBoundingClientRect();
+      const rx = (e.clientX - rect.left)/rect.width - .5;
+      const ry = (e.clientY - rect.top)/rect.height - .5;
+      ring.style.transform = `translate(${rx*18}px, ${ry*18}px)`;
+      glow.style.transform = `translate(${rx*8}px, ${ry*8}px)`;
+    });
+  }
+
+  const nextBtn = document.querySelector('.scroll-next');
+  const topBtn = document.querySelector('.scroll-top');
+  const container = document.querySelector('.snap-container');
+  const sections = [...document.querySelectorAll('.snap')];
+
+  const scrollToIndex = (i)=>{
+    const target = sections[i];
+    if (!target) return;
+    target.scrollIntoView({ behavior:'smooth', block:'start' });
+  };
+
+  if (nextBtn){
+    nextBtn.addEventListener('click', ()=>{
+      const i = sections.findIndex(s => Math.abs(s.getBoundingClientRect().top) < window.innerHeight*0.6);
+      scrollToIndex(Math.min(i+1, sections.length-1));
+    });
+  }
+  if (topBtn){ topBtn.addEventListener('click', ()=> scrollToIndex(0)); }
+
+  // 키보드 ↑↓로 스냅 이동
+  container && container.addEventListener('keydown', (e)=>{
+    if(e.key!=='ArrowDown' && e.key!=='ArrowUp') return;
+    e.preventDefault();
+    const i = sections.findIndex(s => Math.abs(s.getBoundingClientRect().top) < window.innerHeight*0.6);
+    if(e.key==='ArrowDown') scrollToIndex(Math.min(i+1, sections.length-1));
+    else scrollToIndex(Math.max(i-1, 0));
+  });
+})();
+</script>
