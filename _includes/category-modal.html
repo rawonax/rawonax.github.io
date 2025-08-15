@@ -15,7 +15,7 @@
       {%- assign cats = site.data.navigation.main | where_exp: "item","item.url contains '/categories/'" -%}
       {%- for item in cats -%}
       <li class="cat-card" data-cat-item data-cat-keywords="{{ item.title | downcase }} {{ item.url }}">
-        <a class="cat-card__link" href="{{ item.url }}" data-cat-link>
+        <a class="cat-card__link" href="/categories/{{ item.url }}" data-cat-link>
           <span class="cat-card__title">{{ item.title }}</span>
           <span class="cat-card__url">{{ item.url }}</span>
         </a>

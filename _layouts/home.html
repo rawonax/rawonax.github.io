@@ -35,7 +35,7 @@ classes: wide
   <section class="snap section section-light">
     <div class="container">
       <h2 class="sec-title">Featured</h2>
-      <div class="cards">
+      <div class="oncards">
         <a class="card" href="/frontend/">
           <h3>Frontend</h3>
           <p>UI/UX, 성능, 애니메이션</p>
@@ -47,6 +47,18 @@ classes: wide
         <a class="card" href="/security/">
           <h3>Security</h3>
           <p>디버깅, 추적, 실험 노트</p>
+        </a>
+        <a class="card" href="/diary/">
+          <h3>diary</h3>
+          <p>잡다한 생각 공유</p>
+        </a>
+        <a class="card" href="/node/">
+          <h3>backend</h3>
+          <p>노드/스프링 중 노드가 더 많이 올라갑니다</p>
+        </a>
+        <a class="card" href="/somethingilearned">
+          <h3>오늘의 배움</h3>
+          <p>이것저것 잡다한 공부를 합니다</p>
         </a>
       </div>
     </div>
@@ -91,7 +103,98 @@ classes: wide
 }
 body{ background:var(--bg); }
 
+
+/* ====== Interactive Cards (3x2 grid) ====== */
+:root {
+  --card-ease: cubic-bezier(.2,.8,.2,1);
+  --card-dur: .45s;
+  --card-shadow: 0 8px 24px rgba(0,0,0,.28);
+  --card-shadow-hover: 0 12px 32px rgba(0,0,0,.36);
+}
+
+/* 컨테이너: 3열 그리드 */
+.oncards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  /* 등장 애니메이션 준비 */
+  opacity: 0;
+  transform: translateY(8px);
+  transition: opacity .4s var(--card-ease), transform .4s var(--card-ease);
+}
+.oncards.is-ready { opacity: 1; transform: none; }
+
+/* 카드 기본 스타일 */
+.card {
+  position: relative;
+  display: flex; flex-direction: column; justify-content: space-between;
+  background: linear-gradient(180deg,#121212 0%,#0e0e0e 100%);
+  border: 1px solid #2a2a2a;
+  border-radius: 16px;
+  padding: 18px;
+  text-decoration: none; color: #000000;
+  box-shadow: var(--card-shadow);
+  will-change: transform, box-shadow, filter;
+  transform-style: preserve-3d;
+  transition: transform .2s ease, box-shadow .2s ease, filter .2s ease;
+  overflow: hidden;
+}
+
+/* 마우스 위치 따라 빛 강조 (CSS 변수를 JS가 업데이트) */
+.card::after {
+  content: "";
+  position: absolute; inset: -40% -40% auto auto;
+  width: 120%; height: 120%;
+  background: radial-gradient(600px circle at var(--mx,50%) var(--my,50%), rgba(255,255,255,.06), transparent 40%);
+  pointer-events: none; mix-blend-mode: screen; opacity: .75;
+  transition: opacity .25s ease;
+}
+
+/* 호버/포커스 인터랙션 */
+.card:hover, .card:focus-visible { box-shadow: var(--card-shadow-hover); filter: brightness(1.02); }
+.card:focus-visible { outline: 2px solid #3a3a3a; outline-offset: 3px; }
+
+/* 3D 틸트(rotateX/Y는 JS가 변수로 업데이트) */
+.card { transform: perspective(800px) rotateX(var(--rx,0deg)) rotateY(var(--ry,0deg)) translateZ(0); }
+
+/* 리플(클릭 피드백) */
+.card .ripple {
+  position: absolute; border-radius: 50%; transform: translate(-50%,-50%);
+  pointer-events: none; background: rgba(255,255,255,.12);
+  animation: ripple .7s ease-out forwards;
+}
+@keyframes ripple { from { width:0; height:0; opacity:.55; } to { width: 360px; height: 360px; opacity:0; } }
+
+/* 카드 콘텐츠 */
+.card h3 { margin: 0 0 8px; font-size: 1.2rem; letter-spacing: .2px; transform: translateZ(30px); }
+.card p  { margin: 0; font-size: .92rem; opacity: .8; transform: translateZ(18px); }
+
+/* 스태거 인 애니: 카드별로 살짝씩 딜레이 */
+.card { opacity: 0; transform: perspective(800px) translateY(10px) scale(.98); }
+.oncards.is-in .card { animation: cardIn var(--card-dur) var(--card-ease) forwards; }
+.oncards.is-in .card:nth-child(1) { animation-delay: .02s; }
+.oncards.is-in .card:nth-child(2) { animation-delay: .08s; }
+.oncards.is-in .card:nth-child(3) { animation-delay: .14s; }
+.oncards.is-in .card:nth-child(4) { animation-delay: .20s; }
+.oncards.is-in .card:nth-child(5) { animation-delay: .26s; }
+.oncards.is-in .card:nth-child(6) { animation-delay: .32s; }
+
+@keyframes cardIn {
+  from { opacity: 0; transform: perspective(800px) translateY(12px) scale(.98); }
+  to   { opacity: 1; transform: perspective(800px) translateY(0)   scale(1); }
+}
+
+/* 반응형 */
+@media (max-width: 768px) { .oncards { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 480px) { .oncards { grid-template-columns: 1fr; } }
+
+/* 접근성: 모션 최소화 환경 */
+@media (prefers-reduced-motion: reduce) {
+  .oncards, .card, .card::after { transition: none !important; }
+  .oncard.is-in .card, .card { animation: none !important; transform: none !important; }
+}
 /* Snap */
+.snap-hero{margin-bottom:0; padding:0;} 
 .snap-container{ height:100%; scroll-snap-type:y mandatory; overflow-y:auto; }
 .snap{ min-height:100vh; scroll-snap-align:start; position:relative; }
 
