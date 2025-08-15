@@ -22,7 +22,7 @@ title                    : "jena park's blog" # the title of your site, e.g. "My
 title_separator          : "-"
 subtitle                 : ""
 description              : "내일의 후회가 오늘이 되지 않도록"
-url                      : "rawonax.github.io" # the base hostname & protocol for your site, e.g. "https://example.com"`
+url                      : "https://rawonax.github.io" # the base hostname & protocol for your site, e.g. "https://example.com"`
 baseurl                  : ""
 repository               : "rawonax/rawonax.github.io"
 teaser                   : ""
@@ -261,6 +261,7 @@ plugins:
   - jekyll-gist
   - jekyll-feed
   - jekyll-include-cache
+  - jekyll-seo-tag
 
 # mimic GitHub Pages with --safe
 whitelist:
@@ -424,4 +425,5 @@ defaults:
       comments: # true
       share: true
       related: true
+
 
