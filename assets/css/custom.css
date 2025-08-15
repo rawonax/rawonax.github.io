@@ -69,3 +69,57 @@
   font-size: 1.8rem;
   cursor: pointer;
 }
+
+/* ===== 전체 색상 변수 (home.html과 통일) ===== */
+:root {
+  --bg: #f6f7f9;
+  --bg-contrast: #fff;
+  --ink: #111;
+  --muted: #6b7280;
+  --line: #e6e8ee;
+  --accent: #cfd4dd;
+  --shadow: 0 10px 30px rgba(0,0,0,.08);
+}
+
+/* ===== 투명 + 글래스 네비게이션 ===== */
+.masthead {
+  background: transparent !important;
+  box-shadow: none !important;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 999;
+}
+
+.greedy-nav {
+  background: rgba(255, 255, 255, 0.3) !important;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  transition: background 0.3s ease, box-shadow 0.3s ease;
+}
+
+body.scrolled .greedy-nav {
+  background: rgba(255, 255, 255, 0.6) !important;
+}
+
+.greedy-nav a {
+  color: var(--ink) !important;
+  font-weight: 500;
+}
+
+.greedy-nav ul {
+  background: rgba(255, 255, 255, 0.85) !important;
+  backdrop-filter: blur(8px);
+  border-radius: 12px;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+}
+
+.greedy-nav ul li a {
+  color: var(--ink) !important;
+}
+
+/* ===== 페이지 상단 패딩 보정 (고정 네비 때문에) ===== */
+.page__content, .page {
+  padding-top: 70px; /* 네비 높이만큼 */
+}

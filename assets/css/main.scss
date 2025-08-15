@@ -1,14 +1,16 @@
 ---
 search: true
 ---
-
+ 
+@charset "UTF-8";
 
 @import "minimal-mistakes/skins/{{ site.minimal_mistakes_skin | default: 'default' }}";
 @import "minimal-mistakes";
+@import "custom"
 
 
-// 사용자 정의 스타일
-.page__content {
+
+.age__content {
   font-size: 0.77rem;
   line-height: 1.5;
 }
