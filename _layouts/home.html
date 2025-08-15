@@ -111,8 +111,6 @@ classes: wide
   grid-template-columns: repeat(3, 1fr);
   gap: 16px;
   /* 등장 애니메이션 준비 */
-  opacity: 0;
-  transform: translateY(8px);
   transition: opacity .4s var(--card-ease), transform .4s var(--card-ease);
 }
 .oncards.is-ready { opacity: 1; transform: none; }
@@ -125,7 +123,7 @@ classes: wide
   border: 1px solid #2a2a2a;
   border-radius: 16px;
   padding: 18px;
-  text-decoration: none; color: #e5e5e5;
+  text-decoration: none; color: #000000;
   box-shadow: var(--card-shadow);
   will-change: transform, box-shadow, filter;
   transform-style: preserve-3d;
@@ -184,7 +182,8 @@ classes: wide
 /* 접근성: 모션 최소화 환경 */
 @media (prefers-reduced-motion: reduce) {
   .oncards, .card, .card::after { transition: none !important; }
-  .oncard.is-in .card, .card { animation: none !important; transform: none !important; }
+  /* 아래 줄의 .oncard → .oncards 로 수정 */
+  .oncards.is-in .card, .card { animation: none !important; transform: none !important; }
 }
 /* Snap */
 .snap-hero{margin-bottom:0; padding:0;} 
@@ -306,4 +305,6 @@ classes: wide
     else scrollToIndex(Math.max(i-1, 0));
   });
 })();
+
+document.querySelector('.oncards')?.classList.add('is-ready','is-in');
 </script>
