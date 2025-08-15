@@ -12,6 +12,23 @@ classes: wide
   <section class="snap hero">
     <div class="hero-bg">
       <div class="grid"></div>
+
+      <!-- 왼쪽 스크리블 + 소프트 원 (새 요소) -->
+      <svg class="scribble" viewBox="0 0 800 800" aria-hidden="true" focusable="false">
+        <!-- 부드러운 곡선들: 살짝 반투명, 블러, 스크린 블렌드 -->
+        <g opacity="0.55" style="mix-blend-mode:multiply; filter:url(#blur8)">
+          <path d="M50,420 C180,180 560,160 720,280 S640,700 360,620 120,560 50,420" fill="none" stroke="#8298b6" stroke-width="2.5" />
+          <path d="M60,360 C200,120 580,120 740,260 S660,740 360,640 100,560 60,360"  fill="none" stroke="#9fb3cc" stroke-width="2"   />
+          <path d="M40,480 C220,220 520,160 700,300 S600,720 380,660 120,640 40,480" fill="none" stroke="#c2d0e0" stroke-width="1.8" stroke-dasharray="6 8"/>
+        </g>
+        <defs>
+          <filter id="blur8"><feGaussianBlur stdDeviation="1.2"/></filter>
+        </defs>
+      </svg>
+
+      <div class="soft-circle"></div>
+
+      <!-- 기존 오른쪽 링/글로우 -->
       <div class="ring"></div>
       <div class="glow"></div>
     </div>
@@ -20,15 +37,8 @@ classes: wide
       <img src="/assets/images/jena-hero.gif" alt="Jena avatar" class="hero-avatar" />
       <h1 class="hero-title">Jena’s Playground</h1>
       <p class="hero-sub">밝은 무채색 · 미니멀하지만 화려한 인터랙션</p>
-
-      <div class="hero-ctas">
-        <a class="ghost-btn" href="/categories/">Categories</a>
-        <a class="ghost-btn" href="/about/">About</a>
-        <button class="ghost-btn scroll-next" type="button">↓ Scroll</button>
-      </div>
     </div>
 
-    <div class="mouse-indicator"><span></span></div>
   </section>
 
   <!-- FEATURED -->
@@ -92,188 +102,111 @@ classes: wide
       </div>
     </div>
   </section>
-
 </div>
 
-<!-- ===== Styles (페이지 전용, 무채색·밝은 톤) ===== -->
+<!-- ===== Styles (페이지 전용) ===== -->
 <style>
-/* ====== Interactive Cards (3x2 grid) ====== */
-:root {
-  --card-ease: cubic-bezier(.2,.8,.2,1);
-  --card-dur: .45s;
-  --card-shadow: 0 8px 24px rgba(0,0,0,.28);
-  --card-shadow-hover: 0 12px 32px rgba(0,0,0,.36);
+/* ---------- 공통 변수 ---------- */
+:root{
+  --ink:#0f1115; --muted:#667084; --accent:#cfd6e3; --line:rgba(0,0,0,.06);
+  --shadow:0 6px 20px rgba(0,0,0,.10);
+  --card-ease:cubic-bezier(.2,.8,.2,1); --card-dur:.45s;
 }
 
-/* 컨테이너: 3열 그리드 */
-.oncards {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 16px;
-  /* 등장 애니메이션 준비 */
-  transition: opacity .4s var(--card-ease), transform .4s var(--card-ease);
-}
-.oncards.is-ready { opacity: 1; transform: none; }
+.default_cursor_land {margin-top:0; margin-bottom:0;}
+.grid {height:800px; width:700px;}
+.hero-bg{height:700px; width:700px; !important;}
 
-/* 카드 기본 스타일 */
-.card {
-  position: relative;
-  display: flex; flex-direction: column; justify-content: space-between;
-  background: linear-gradient(180deg,#121212 0%,#0e0e0e 100%);
-  border: 1px solid #2a2a2a;
-  border-radius: 16px;
-  padding: 18px;
-  text-decoration: none; color: #000000;
-  box-shadow: var(--card-shadow);
-  will-change: transform, box-shadow, filter;
-  transform-style: preserve-3d;
-  transition: transform .2s ease, box-shadow .2s ease, filter .2s ease;
-  overflow: hidden;
-}
+/* ---------- 스냅 ---------- */
+.snap-container{height:100%;scroll-snap-type:y mandatory;overflow-y:auto}
+.snap{min-height:100vh;scroll-snap-align:start;position:relative}
+.snap-hero{margin-top:0}
 
-/* 마우스 위치 따라 빛 강조 (CSS 변수를 JS가 업데이트) */
-.card::after {
-  content: "";
-  position: absolute; inset: -40% -40% auto auto;
-  width: 120%; height: 120%;
-  background: radial-gradient(600px circle at var(--mx,50%) var(--my,50%), rgba(255,255,255,.06), transparent 40%);
-  pointer-events: none; mix-blend-mode: screen; opacity: .75;
-  transition: opacity .25s ease;
-}
-
-/* 호버/포커스 인터랙션 */
-.card:hover, .card:focus-visible { box-shadow: var(--card-shadow-hover); filter: brightness(1.02); }
-.card:focus-visible { outline: 2px solid #3a3a3a; outline-offset: 3px; }
-
-/* 3D 틸트(rotateX/Y는 JS가 변수로 업데이트) */
-.card { transform: perspective(800px) rotateX(var(--rx,0deg)) rotateY(var(--ry,0deg)) translateZ(0); }
-
-/* 리플(클릭 피드백) */
-.card .ripple {
-  position: absolute; border-radius: 50%; transform: translate(-50%,-50%);
-  pointer-events: none; background: rgba(255,255,255,.12);
-  animation: ripple .7s ease-out forwards;
-}
-@keyframes ripple { from { width:0; height:0; opacity:.55; } to { width: 360px; height: 360px; opacity:0; } }
-
-/* 카드 콘텐츠 */
-.card h3 { margin: 0 0 8px; font-size: 1.2rem; letter-spacing: .2px; transform: translateZ(30px); }
-.card p  { margin: 0; font-size: .92rem; opacity: .8; transform: translateZ(18px); }
-
-/* 스태거 인 애니: 카드별로 살짝씩 딜레이 */
-.card { opacity: 0; transform: perspective(800px) translateY(10px) scale(.98); }
-.oncards.is-in .card { animation: cardIn var(--card-dur) var(--card-ease) forwards; }
-.oncards.is-in .card:nth-child(1) { animation-delay: .02s; }
-.oncards.is-in .card:nth-child(2) { animation-delay: .08s; }
-.oncards.is-in .card:nth-child(3) { animation-delay: .14s; }
-.oncards.is-in .card:nth-child(4) { animation-delay: .20s; }
-.oncards.is-in .card:nth-child(5) { animation-delay: .26s; }
-.oncards.is-in .card:nth-child(6) { animation-delay: .32s; }
-
-@keyframes cardIn {
-  from { opacity: 0; transform: perspective(800px) translateY(12px) scale(.98); }
-  to   { opacity: 1; transform: perspective(800px) translateY(0)   scale(1); }
-}
-
-/* 반응형 */
-@media (max-width: 768px) { .oncards { grid-template-columns: repeat(2, 1fr); } }
-@media (max-width: 480px) { .oncards { grid-template-columns: 1fr; } }
-
-/* 접근성: 모션 최소화 환경 */
-@media (prefers-reduced-motion: reduce) {
-  .oncards, .card, .card::after { transition: none !important; }
-  /* 아래 줄의 .oncard → .oncards 로 수정 */
-  .oncards.is-in .card, .card { animation: none !important; transform: none !important; }
-}
-/* Snap */
-.snap-hero{margin-bottom:0; padding:0;} 
-.snap-container{ height:100%; scroll-snap-type:y mandatory; overflow-y:auto; }
-.snap{ min-height:100vh; scroll-snap-align:start; position:relative; }
-
-/* Hero */
-.hero{ display:grid; place-items:center; padding:clamp(40px,8vh,100px) 20px; overflow:hidden; }
-.hero-bg .grid{ position:absolute; inset:0;
-  background:
-    linear-gradient(var(--line) 1px,transparent 1px) 0 0/26px 26px,
-    linear-gradient(90deg,var(--line) 1px,transparent 1px) 0 0/26px 26px;
-  opacity:.6; }
-.hero-bg .ring{ position:absolute; width:68vmin; height:68vmin; border-radius:50%;
-  background:radial-gradient(closest-side,#111 0 98%,transparent 99%);
-  opacity:.9; filter:drop-shadow(0 20px 40px rgba(0,0,0,.2)); transform:translateZ(0); }
-.hero-bg .glow{ position:absolute; width:120vmin; height:120vmin; border-radius:50%;
-  background:radial-gradient(circle at 50% 60%, rgba(255,255,255,.75), transparent 60%);
-  mix-blend-mode:screen; animation:float 8s ease-in-out infinite; pointer-events:none; }
+/* ---------- 히어로 ---------- */
+.hero{display:grid;place-items:center;padding:clamp(40px,8vh,100px) 20px;overflow:hidden}
+.hero-bg{position:absolute;inset:0;z-index:0}
+.hero-bg .grid{position:absolute;inset:0;background:
+  linear-gradient(var(--line) 1px,transparent 1px) 0 0/32px 32px,
+  linear-gradient(90deg,var(--line) 1px,transparent 1px) 0 0/32px 32px;opacity:.6}
+.hero-bg .ring{position:absolute;right:-6vmin;top:10vmin;width:68vmin;height:68vmin;border-radius:50%;
+  background:radial-gradient(closest-side,#111 0 98%,transparent 99%);opacity:.9;filter:drop-shadow(0 20px 40px rgba(0,0,0,.2))}
+.hero-bg .glow{position:absolute;right:-12vmin;top:-8vmin;width:120vmin;height:120vmin;border-radius:50%;
+  background:radial-gradient(circle at 50% 60%, rgba(255,255,255,.75), transparent 60%);mix-blend-mode:screen;animation:float 8s ease-in-out infinite;pointer-events:none}
 @keyframes float{0%,100%{transform:translateY(-6px)}50%{transform:translateY(6px)}}
 
-.hero-content{ text-align:center; position:relative; z-index:2; }
-.hero-avatar{ width:min(46vmin,320px); ;
-  animation:pop .9s cubic-bezier(.2,.9,.2,1) both; }
+/* 새 요소: 왼쪽 스크리블 & 소프트 원 */
+.scribble{position:absolute;left:-8vmin;top:2vmin;width:60vmin;height:60vmin;z-index:0;opacity:.7}
+.soft-circle{position:absolute;left:-7vmin;top:45%;width:26vmin;height:26vmin;border-radius:50%;
+  background:radial-gradient(circle, rgba(200,220,255,.28) 0%, transparent 70%);
+  transform:translateY(-50%);filter:blur(8px);z-index:0;animation:softFloat 10s ease-in-out infinite}
+@keyframes softFloat{0%,100%{transform:translateY(-50%) translateX(0)}50%{transform:translateY(calc(-50% - 6px)) translateX(8px)}}
+/* ring만 숨기기 (원 1개만 남기기) */
+.hero-bg .ring { display: none; }
+.hero-content{text-align:center;position:relative;z-index:2}
+.hero-avatar{width:min(46vmin,320px);animation:pop .9s cubic-bezier(.2,.9,.2,1) both}
 @keyframes pop{0%{transform:translateY(10px) scale(.96);opacity:0}100%{transform:translateY(0) scale(1);opacity:1}}
-.hero-title{ margin:18px 0 6px; font-size:clamp(28px,4.2vw,52px); color:var(--ink); letter-spacing:.5px; }
-.hero-sub{ color:var(--muted); font-size:clamp(14px,1.8vw,18px); }
-
-.hero-ctas{ display:flex; gap:12px; justify-content:center; margin-top:18px; flex-wrap:wrap; }
-.ghost-btn{
-  border:1px solid var(--accent); padding:10px 16px; border-radius:999px;
-  background:linear-gradient(180deg,#fff,#f3f4f7); box-shadow:var(--shadow); color:#111; font-weight:600;
-  transition:transform .2s ease, box-shadow .2s ease, border-color .2s ease;
-}
-.ghost-btn:hover{ transform:translateY(-2px); box-shadow:0 12px 24px rgba(0,0,0,.12); border-color:#d7dbe2; }
-
-/* mouse hint */
-.mouse-indicator{ position:absolute; left:50%; bottom:18px; transform:translateX(-50%);
-  width:30px; height:54px; border:2px solid #cfd4dd; border-radius:20px; opacity:.8; }
-.mouse-indicator span{ position:absolute; left:50%; top:10px; width:6px; height:6px; background:#aab1bd; border-radius:50%;
-  transform:translateX(-50%); animation:wheel 1.8s ease-in-out infinite; }
+.hero-title{margin:18px 0 6px;font-size:clamp(28px,4.2vw,52px);color:var(--ink)}
+.hero-sub{color:var(--muted);font-size:clamp(14px,1.8vw,18px)}
+.hero-ctas{display:flex;gap:12px;justify-content:center;margin-top:18px;flex-wrap:wrap}
+.ghost-btn{border:1px solid var(--accent);padding:10px 16px;border-radius:999px;background:linear-gradient(180deg,#fff,#f3f4f7);box-shadow:var(--shadow);color:#111;font-weight:600;transition:transform .2s ease,box-shadow .2s ease,border-color .2s ease}
+.ghost-btn:hover{transform:translateY(-2px);box-shadow:0 12px 24px rgba(0,0,0,.12);border-color:#d7dbe2}
+.mouse-indicator{position:absolute;left:50%;bottom:18px;transform:translateX(-50%);width:30px;height:54px;border:2px solid #cfd4dd;border-radius:20px;opacity:.8}
+.mouse-indicator span{position:absolute;left:50%;top:10px;width:6px;height:6px;background:#aab1bd;border-radius:50%;transform:translateX(-50%);animation:wheel 1.8s ease-in-out infinite}
 @keyframes wheel{0%{transform:translate(-50%,0);opacity:1}80%{transform:translate(-50%,16px);opacity:0}100%{opacity:0}}
 
-/* Sections */
-.section{ display:flex; align-items:center; }
-.section-light{ background:#f9fafb; }
-.section-white{ background:#fff; }
-.section-glass{
-  background:
-    radial-gradient(1200px 800px at 80% -20%, rgba(0,0,0,.06), transparent),
-    linear-gradient(180deg, rgba(255,255,255,.9), rgba(255,255,255,.8));
-  backdrop-filter: blur(6px);
+/* ---------- 섹션 ---------- */
+.section{display:flex;align-items:center}
+.section-light{background:#f9fafb}
+.section-white{background:#fff}
+.section-glass{background:
+  radial-gradient(1200px 800px at 80% -20%, rgba(0,0,0,.06), transparent),
+  linear-gradient(180deg, rgba(255,255,255,.9), rgba(255,255,255,.8));backdrop-filter:blur(6px)}
+.container{width:min(1080px,92%);margin-inline:auto}
+.center{text-align:center}
+.sec-title{font-size:clamp(22px,3.2vw,34px);margin-bottom:14px;color:#0f1115}
+.muted{color:var(--muted)}
+
+/* ---------- Featured: 빈공간 없이 꽉 찬 3×2 ---------- */
+.section.section-light .container{max-width:none;width:100%;padding-inline:clamp(16px,4vw,40px)}
+.oncards{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px;justify-items:stretch;align-items:stretch}
+.oncards .card{box-sizing:border-box;width:100%;height:100%;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;padding:24px;border:1px solid #e6e9ef;border-radius:18px;background:#fff;box-shadow:0 10px 26px rgba(0,0,0,.08);transition:transform .2s ease, box-shadow .2s ease, border-color .2s ease}
+.oncards .card:hover{transform:translateY(-4px);box-shadow:0 16px 40px rgba(0,0,0,.12);border-color:#dde3ec}
+.oncards .card h3{margin:0 0 8px;font-size:clamp(18px,2.4vw,28px)}
+.oncards .card p{margin:0;opacity:.85;font-size:clamp(14px,1.6vw,18px)}
+@media (max-width:900px){.oncards{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:560px){.oncards{grid-template-columns:1fr}}
+
+/* ---------- Posts ---------- */
+.posts{display:grid;gap:16px;grid-template-columns:repeat(auto-fit,minmax(280px,1fr))}
+.post{display:block;padding:18px;border-radius:16px;background:#fff;border:1px solid #eceff4;text-decoration:none;color:#111;box-shadow:var(--shadow);transition:transform .2s ease,box-shadow .2s ease}
+.post:hover{transform:translateY(-4px);box-shadow:0 12px 28px rgba(0,0,0,.1)}
+.post time{font-size:12px;color:var(--muted)}
+.post h3{margin:6px 0 6px;font-size:18px}
+
+/* ---------- 접근성: 모션 최소화 ---------- */
+@media (prefers-reduced-motion:reduce){
+  .hero-bg .glow,.soft-circle,.scribble{animation:none!important}
 }
-.container{ width:min(1080px,92%); margin-inline:auto; }
-.center{text-align:center;}
-.sec-title{ font-size:clamp(22px,3.2vw,34px); margin-bottom:14px; color:#0f1115; }
-.muted{ color:var(--muted); }
-
-/* Cards */
-.cards{ display:grid; gap:16px; grid-template-columns:repeat(auto-fit, minmax(240px,1fr)); margin-top:10px; }
-.card{ display:block; padding:20px; border-radius:18px; background:var(--bg-contrast);
-  box-shadow:var(--shadow); color:#111; text-decoration:none; border:1px solid #eef0f3;
-  transition:transform .25s ease, box-shadow .25s ease, border-color .25s ease; }
-.card:hover{ transform:translateY(-6px); box-shadow:0 16px 40px rgba(0,0,0,.12); border-color:#e2e6ec; }
-
-/* Posts */
-.posts{ display:grid; gap:16px; grid-template-columns:repeat(auto-fit,minmax(280px,1fr)); }
-.post{ display:block; padding:18px; border-radius:16px; background:#fff; border:1px solid #eceff4; text-decoration:none; color:#111; box-shadow:var(--shadow);
-  transition:transform .2s ease, box-shadow .2s ease; }
-.post:hover{ transform:translateY(-4px); box-shadow:0 12px 28px rgba(0,0,0,.1); }
-.post time{ font-size:12px; color:var(--muted); }
-.post h3{ margin:6px 0 6px; font-size:18px; }
-
-/* tiny parallax */
-.hero:hover .hero-avatar{ transform:translateZ(0) scale(1.01); }
 </style>
 
 <!-- ===== Scripts (패럴랙스, 스냅 이동) ===== -->
 <script>
 (function(){
+  // 패럴랙스(오른쪽 링/글로우 + 왼쪽 원/스크리블)
+  const hero = document.querySelector('.hero');
   const ring = document.querySelector('.hero-bg .ring');
   const glow = document.querySelector('.hero-bg .glow');
-  const hero = document.querySelector('.hero');
-  if (hero && ring && glow){
+  const soft = document.querySelector('.soft-circle');
+  const scribble = document.querySelector('.scribble');
+  if (hero){
     hero.addEventListener('pointermove', (e)=>{
-      const rect = hero.getBoundingClientRect();
-      const rx = (e.clientX - rect.left)/rect.width - .5;
-      const ry = (e.clientY - rect.top)/rect.height - .5;
-      ring.style.transform = `translate(${rx*18}px, ${ry*18}px)`;
-      glow.style.transform = `translate(${rx*8}px, ${ry*8}px)`;
+      const r = hero.getBoundingClientRect();
+      const rx = (e.clientX - r.left)/r.width - .5;
+      const ry = (e.clientY - r.top)/r.height - .5;
+      if(ring) ring.style.transform = `translate(${rx*18}px, ${ry*18}px)`;
+      if(glow) glow.style.transform = `translate(${rx*8}px, ${ry*8}px)`;
+      if(soft) soft.style.transform = `translate(${rx*-10}px, calc(-50% + ${ry*10}px))`;
+      if(scribble) scribble.style.transform = `translate(${rx*-12}px, ${ry*-4}px)`;
     });
   }
 
@@ -283,28 +216,17 @@ classes: wide
   const sections = [...document.querySelectorAll('.snap')];
 
   const scrollToIndex = (i)=>{
-    const target = sections[i];
-    if (!target) return;
-    target.scrollIntoView({ behavior:'smooth', block:'start' });
+    const t = sections[i]; if(!t) return;
+    t.scrollIntoView({behavior:'smooth',block:'start'});
   };
 
-  if (nextBtn){
-    nextBtn.addEventListener('click', ()=>{
-      const i = sections.findIndex(s => Math.abs(s.getBoundingClientRect().top) < window.innerHeight*0.6);
-      scrollToIndex(Math.min(i+1, sections.length-1));
-    });
-  }
-  if (topBtn){ topBtn.addEventListener('click', ()=> scrollToIndex(0)); }
-
-  // 키보드 ↑↓로 스냅 이동
-  container && container.addEventListener('keydown', (e)=>{
-    if(e.key!=='ArrowDown' && e.key!=='ArrowUp') return;
-    e.preventDefault();
-    const i = sections.findIndex(s => Math.abs(s.getBoundingClientRect().top) < window.innerHeight*0.6);
-    if(e.key==='ArrowDown') scrollToIndex(Math.min(i+1, sections.length-1));
-    else scrollToIndex(Math.max(i-1, 0));
+  nextBtn && nextBtn.addEventListener('click', ()=>{
+    const i = sections.findIndex(s=>Math.abs(s.getBoundingClientRect().top)<window.innerHeight*0.6);
+    scrollToIndex(Math.min(i+1, sections.length-1));
   });
-})();
+  topBtn && topBtn.addEventListener('click', ()=>scrollToIndex(0));
 
-document.querySelector('.oncards')?.classList.add('is-ready','is-in');
+  // 카드 등장(간단)
+  document.querySelector('.oncards')?.classList.add('is-ready','is-in');
+})();
 </script>
