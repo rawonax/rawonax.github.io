@@ -1,0 +1,30 @@
+<!-- Category Modal (include in default layout) -->
+<div id="category-modal" class="cat-modal" aria-hidden="true" role="dialog" aria-labelledby="catModalTitle">
+  <div class="cat-modal__backdrop" data-cat-close></div>
+  <div class="cat-modal__dialog" role="document">
+    <header class="cat-modal__header">
+      <h2 id="catModalTitle">카테고리 이동</h2>
+      <button class="cat-modal__close" type="button" aria-label="닫기" data-cat-close>×</button>
+    </header>
+
+    <div class="cat-modal__search">
+      <input id="catSearch" type="text" placeholder="카테고리 검색… (f, or, dia, sec, today)" autocomplete="off"/>
+    </div>
+
+    <ul class="cat-modal__grid" role="list">
+      {%- assign cats = site.data.navigation.main | where_exp: "item","item.url contains '/categories/'" -%}
+      {%- for item in cats -%}
+      <li class="cat-card" data-cat-item data-cat-keywords="{{ item.title | downcase }} {{ item.url }}">
+        <a class="cat-card__link" href="{{ item.url }}" data-cat-link>
+          <span class="cat-card__title">{{ item.title }}</span>
+          <span class="cat-card__url">{{ item.url }}</span>
+        </a>
+      </li>
+      {%- endfor -%}
+    </ul>
+
+    <footer class="cat-modal__footer">
+      <button class="cat-modal__btn" type="button" data-cat-close>닫기(Esc)</button>
+    </footer>
+  </div>
+</div>
