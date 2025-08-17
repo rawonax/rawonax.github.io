@@ -123,3 +123,9 @@ body.scrolled .greedy-nav {
 .page__content, .page {
   padding-top: 70px; /* 네비 높이만큼 */
 }
+
+a:visited {
+  color: inherit !important;   /* 부모 색상 그대로 따라가게 */
+  text-decoration: none !important; /* 밑줄도 원래랑 동일하게 */
+}
+
