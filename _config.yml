@@ -115,11 +115,7 @@ author:
   name             : "박제나"
   avatar           : "profile/profile.gif"
   bio              : "오늘의 후회가 내일이 되지 않도록"
-<<<<<<< HEAD
   location         : "coming soon, NY"
-=======
-  location         : "NY, USA"
->>>>>>> 77d038012fbff1e85659b846a71db0e43bde2cea
   email            : "mailto:rawonax7@gmail.com"
   links:
     - label: "Email"
