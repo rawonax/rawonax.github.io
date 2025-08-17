@@ -1,63 +1,244 @@
 ---
-layout: archive
+layout: default
+title: Home
+permalink: /
+classes: wide
 ---
 
-{{ content }}
+<!-- ===== HOME (무채색, 스냅 스크롤) ===== -->
+<div class="snap-container">
 
-<div class="home-content" style="max-width: 1000px; margin: 0 auto; padding: 2rem; font-size: 0.6rem;">
+  <!-- HERO -->
+  <section class="snap hero">
+    <div class="hero-bg">
+      <div class="grid"></div>
 
-  <h1 style="text-align: center; font-size: 1.2rem;">🍃 안녕하세요, 박제나입니다! 🍃</h1>
+      <!-- 왼쪽 스크리블 + 소프트 원 (새 요소) -->
+      <svg class="scribble" viewBox="0 0 800 800" aria-hidden="true" focusable="false">
+        <!-- 부드러운 곡선들: 살짝 반투명, 블러, 스크린 블렌드 -->
+        <g opacity="0.55" style="mix-blend-mode:multiply; filter:url(#blur8)">
+          <path d="M50,420 C180,180 560,160 720,280 S640,700 360,620 120,560 50,420" fill="none" stroke="#8298b6" stroke-width="2.5" />
+          <path d="M60,360 C200,120 580,120 740,260 S660,740 360,640 100,560 60,360"  fill="none" stroke="#9fb3cc" stroke-width="2"   />
+          <path d="M40,480 C220,220 520,160 700,300 S600,720 380,660 120,640 40,480" fill="none" stroke="#c2d0e0" stroke-width="1.8" stroke-dasharray="6 8"/>
+        </g>
+        <defs>
+          <filter id="blur8"><feGaussianBlur stdDeviation="1.2"/></filter>
+        </defs>
+      </svg>
 
-  <p style="text-align: center; line-height: 1.6;">
-    💻 <strong>React / React Native / Node.js</strong> 개발자, 박제나입니다.<br>
-    🛡️ <strong>정보보안</strong>도 가끔 다룹니다<br>
-    🌍 <strong>kor</strong> <strong>eng</strong>, <strong>chinese</strong>
-  </p>
+      <div class="soft-circle"></div>
 
-  <h2 style="text-align: center; font-size: 0.8rem;">🌟 기술 스택</h2>
-
-  <div style="display: flex; justify-content: center; gap: 40px; flex-wrap: wrap; text-align: center;">
-    <!-- 프론트엔드 -->
-    <div>
-      <h3 style="font-size: 0.8rem;">💻 프론트엔드</h3>
-      <p>
-        <img src="https://img.shields.io/badge/-React-61DAFB?style=flat-square&logo=react&logoColor=black">
-        <img src="https://img.shields.io/badge/-React%20Native-61DAFB?style=flat-square&logo=react&logoColor=black">
-        <img src="https://img.shields.io/badge/-Next.js-000000?style=flat-square&logo=next.js">
-      </p>
+      <!-- 기존 오른쪽 링/글로우 -->
+      <div class="ring"></div>
+      <div class="glow"></div>
     </div>
 
-    <!-- 백엔드 -->
-    <div>
-      <h3 style="font-size: 0.8rem;">🔧 백엔드</h3>
-      <p>
-        <img src="https://img.shields.io/badge/-Node.js-339933?style=flat-square&logo=node.js&logoColor=white">
-        <img src="https://img.shields.io/badge/-Express-000000?style=flat-square&logo=express&logoColor=white">
-      </p>
+    <div class="hero-content">
+      <img src="/assets/images/jena-hero.gif" alt="Jena avatar" class="hero-avatar" />
+      <h1 class="hero-title">Jena’s Playground</h1>
+      <p class="hero-sub">한낱 검정고시생의 미국 취업 이야기</p>
     </div>
 
-    <!-- 데이터베이스 & 인프라 -->
-    <div>
-      <h3 style="font-size: 0.8rem;">🗃️ 데이터베이스 & 인프라</h3>
-      <p>
-        <img src="https://img.shields.io/badge/-MongoDB-47A248?style=flat-square&logo=mongodb&logoColor=white">
-        <img src="https://img.shields.io/badge/-Firebase-FFCA28?style=flat-square&logo=firebase&logoColor=black">
-        <img src="https://img.shields.io/badge/-MySQL-4479A1?style=flat-square&logo=mysql&logoColor=white">
-        <img src="https://img.shields.io/badge/-MariaDB-003545?style=flat-square&logo=mariadb&logoColor=white">
-      </p>
-    </div>
+  </section>
 
-    <!-- 도구들 -->
-    <div>
-      <h3 style="font-size: 0.8rem;">🛠️ 좋아하는 도구들</h3>
-      <p>
-        <img src="https://img.shields.io/badge/-VSCode-007ACC?style=flat-square&logo=visual-studio-code">
-        <img src="https://img.shields.io/badge/-Git-F05032?style=flat-square&logo=git&logoColor=white">
-        <img src="https://img.shields.io/badge/-Figma-F24E1E?style=flat-square&logo=figma&logoColor=white">
-      </p>
+  <!-- FEATURED -->
+  <section class="snap section section-light">
+    <div class="container">
+      <h2 class="sec-title">Featured</h2>
+      <div class="oncards">
+        <a class="card" href="/categories/frontend/">
+          <h3>Frontend</h3>
+          <p>UI/UX, 성능, 애니메이션</p>
+        </a>
+        <a class="card" href="/categories/til/">
+          <h3>TIL</h3>
+          <p>하루를 흔든 삽질과 인사이트</p>
+        </a>
+        <a class="card" href="/categories//security/">
+          <h3>Security</h3>
+          <p>디버깅, 추적, 실험 노트</p>
+        </a>
+        <a class="card" href="/categories//diary/">
+          <h3>diary</h3>
+          <p>잡다한 생각 공유</p>
+        </a>
+        <a class="card" href="/categories//node/">
+          <h3>backend</h3>
+          <p>노드/스프링 중 노드가 더 많이 올라갑니다</p>
+        </a>
+        <a class="card" href="/categories//today">
+          <h3>일상일기</h3>
+          <p>오늘의 일상을 올립니다</p>
+        </a>
+      </div>
     </div>
-  </div>
+  </section>
 
+  <!-- LATEST POSTS -->
+  <section class="snap section section-white">
+    <div class="container">
+      <h2 class="sec-title">Latest Posts</h2>
+      <div class="posts">
+        {%- assign latest = site.posts | slice: 0, 6 -%}
+        {%- for post in latest -%}
+          <a class="post" href="{{ post.url | relative_url }}">
+            <time>{{ post.date | date: "%Y.%m.%d" }}</time>
+            <h3>{{ post.title }}</h3>
+            <p>{{ post.excerpt | strip_html | truncate: 120 }}</p>
+          </a>
+        {%- endfor -%}
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT / FOOTER HERO -->
+  <section class="snap section section-glass">
+    <div class="container center">
+      <h2 class="sec-title">Let’s build something</h2>
+      <p class="muted">문의: <a href="mailto:rawonax7@gmail.com">rawonax7@gmail.com</a></p>
+      <div class="hero-ctas">
+        <a class="ghost-btn" href="https://github.com/rawonax">GitHub</a>
+        <button class="ghost-btn scroll-top" type="button">↑ Back to top</button>
+      </div>
+    </div>
+  </section>
 </div>
 
-<!-- 🔥 GitHub 활동 그래프: 오른쪽 중앙 고정 -->
+<!-- ===== Styles (페이지 전용) ===== -->
+<style>
+/* ---------- 공통 변수 ---------- */
+:root{
+  --ink:#0f1115; --muted:#667084; --accent:#cfd6e3; --line:rgba(0,0,0,.06);
+  --shadow:0 6px 20px rgba(0,0,0,.10);
+  --card-ease:cubic-bezier(.2,.8,.2,1); --card-dur:.45s;
+}
+
+.hero {
+  padding-bottom: 0 !important;
+  min-height: auto !important;
+  margin-bottom: 20px !important;
+}
+
+.section.section-light {
+  margin-top: 0 !important;
+  padding-top: 0 !important;
+  min-height: auto !important;
+  margin-bottom: 20px !important;
+}
+.snap.section.section-light.default_cursor_land {
+  height: 400px !important;
+}
+
+/* ---------- 스냅 ---------- */
+.snap-container{height:100%;scroll-snap-type:y mandatory;overflow-y:auto}
+.snap{min-height:100vh;scroll-snap-align:start;position:relative}
+.snap-hero{margin-top:0}
+
+/* ---------- 히어로 ---------- */
+.hero{display:grid;place-items:center;padding:clamp(40px,8vh,100px) 20px;overflow:hidden}
+.hero-bg{position:absolute;inset:0;z-index:0}
+.hero-bg .grid{position:absolute;inset:0;background:
+  linear-gradient(var(--line) 1px,transparent 1px) 0 0/32px 32px,
+  linear-gradient(90deg,var(--line) 1px,transparent 1px) 0 0/32px 32px;opacity:.6}
+.hero-bg .ring{position:absolute;right:-6vmin;top:10vmin;width:68vmin;height:68vmin;border-radius:50%;
+  background:radial-gradient(closest-side,#111 0 98%,transparent 99%);opacity:.9;filter:drop-shadow(0 20px 40px rgba(0,0,0,.2))}
+.hero-bg .glow{position:absolute;right:-12vmin;top:-8vmin;width:120vmin;height:120vmin;border-radius:50%;
+  background:radial-gradient(circle at 50% 60%, rgba(255,255,255,.75), transparent 60%);mix-blend-mode:screen;animation:float 8s ease-in-out infinite;pointer-events:none}
+@keyframes float{0%,100%{transform:translateY(-6px)}50%{transform:translateY(6px)}}
+
+/* 새 요소: 왼쪽 스크리블 & 소프트 원 */
+.scribble{position:absolute;left:-8vmin;top:2vmin;width:60vmin;height:60vmin;z-index:0;opacity:.7}
+.soft-circle{position:absolute;left:-7vmin;top:45%;width:26vmin;height:26vmin;border-radius:50%;
+  background:radial-gradient(circle, rgba(200,220,255,.28) 0%, transparent 70%);
+  transform:translateY(-50%);filter:blur(8px);z-index:0;animation:softFloat 10s ease-in-out infinite}
+@keyframes softFloat{0%,100%{transform:translateY(-50%) translateX(0)}50%{transform:translateY(calc(-50% - 6px)) translateX(8px)}}
+/* ring만 숨기기 (원 1개만 남기기) */
+.hero-bg .ring { display: none; }
+.hero-content{text-align:center;position:relative;z-index:2}
+.hero-avatar{width:min(46vmin,320px);animation:pop .9s cubic-bezier(.2,.9,.2,1) both}
+@keyframes pop{0%{transform:translateY(10px) scale(.96);opacity:0}100%{transform:translateY(0) scale(1);opacity:1}}
+.hero-title{margin:18px 0 6px;font-size:clamp(28px,4.2vw,52px);color:var(--ink)}
+.hero-sub{color:var(--muted);font-size:clamp(14px,1.8vw,18px)}
+.hero-ctas{display:flex;gap:12px;justify-content:center;margin-top:18px;flex-wrap:wrap}
+.ghost-btn{border:1px solid var(--accent);padding:10px 16px;border-radius:999px;background:linear-gradient(180deg,#fff,#f3f4f7);box-shadow:var(--shadow);color:#111;font-weight:600;transition:transform .2s ease,box-shadow .2s ease,border-color .2s ease}
+.ghost-btn:hover{transform:translateY(-2px);box-shadow:0 12px 24px rgba(0,0,0,.12);border-color:#d7dbe2}
+.mouse-indicator{position:absolute;left:50%;bottom:18px;transform:translateX(-50%);width:30px;height:54px;border:2px solid #cfd4dd;border-radius:20px;opacity:.8}
+.mouse-indicator span{position:absolute;left:50%;top:10px;width:6px;height:6px;background:#aab1bd;border-radius:50%;transform:translateX(-50%);animation:wheel 1.8s ease-in-out infinite}
+@keyframes wheel{0%{transform:translate(-50%,0);opacity:1}80%{transform:translate(-50%,16px);opacity:0}100%{opacity:0}}
+
+/* ---------- 섹션 ---------- */
+.section{display:flex;align-items:center}
+.section-light{background:#f9fafb}
+.section-white{background:#fff}
+.section-glass{background:
+  radial-gradient(1200px 800px at 80% -20%, rgba(0,0,0,.06), transparent),
+  linear-gradient(180deg, rgba(255,255,255,.9), rgba(255,255,255,.8));backdrop-filter:blur(6px)}
+.container{width:min(1080px,92%);margin-inline:auto}
+.center{text-align:center}
+.sec-title{font-size:clamp(22px,3.2vw,34px);margin-bottom:14px;color:#0f1115}
+.muted{color:var(--muted)}
+
+/* ---------- Featured: 빈공간 없이 꽉 찬 3×2 ---------- */
+.section.section-light .container{max-width:none;width:100%;padding-inline:clamp(16px,4vw,40px)}
+.oncards{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px;justify-items:stretch;align-items:stretch}
+.oncards .card{box-sizing:border-box;width:100%;height:100%;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;padding:24px;border:1px solid #e6e9ef;border-radius:18px;background:#fff;box-shadow:0 10px 26px rgba(0,0,0,.08);transition:transform .2s ease, box-shadow .2s ease, border-color .2s ease}
+.oncards .card:hover{transform:translateY(-4px);box-shadow:0 16px 40px rgba(0,0,0,.12);border-color:#dde3ec}
+.oncards .card h3{margin:0 0 8px;font-size:clamp(18px,2.4vw,28px)}
+.oncards .card p{margin:0;opacity:.85;font-size:clamp(14px,1.6vw,18px)}
+@media (max-width:900px){.oncards{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:560px){.oncards{grid-template-columns:1fr}}
+
+/* ---------- Posts ---------- */
+.posts{display:grid;gap:16px;grid-template-columns:repeat(auto-fit,minmax(280px,1fr))}
+.post{display:block;padding:18px;border-radius:16px;background:#fff;border:1px solid #eceff4;text-decoration:none;color:#111;box-shadow:var(--shadow);transition:transform .2s ease,box-shadow .2s ease}
+.post:hover{transform:translateY(-4px);box-shadow:0 12px 28px rgba(0,0,0,.1)}
+.post time{font-size:12px;color:var(--muted)}
+.post h3{margin:6px 0 6px;font-size:18px}
+
+/* ---------- 접근성: 모션 최소화 ---------- */
+@media (prefers-reduced-motion:reduce){
+  .hero-bg .glow,.soft-circle,.scribble{animation:none!important}
+}
+</style>
+
+<!-- ===== Scripts (패럴랙스, 스냅 이동) ===== -->
+<script>
+(function(){
+  // 패럴랙스(오른쪽 링/글로우 + 왼쪽 원/스크리블)
+  const hero = document.querySelector('.hero');
+  const ring = document.querySelector('.hero-bg .ring');
+  const glow = document.querySelector('.hero-bg .glow');
+  const soft = document.querySelector('.soft-circle');
+  const scribble = document.querySelector('.scribble');
+  if (hero){
+    hero.addEventListener('pointermove', (e)=>{
+      const r = hero.getBoundingClientRect();
+      const rx = (e.clientX - r.left)/r.width - .5;
+      const ry = (e.clientY - r.top)/r.height - .5;
+      if(ring) ring.style.transform = `translate(${rx*18}px, ${ry*18}px)`;
+      if(glow) glow.style.transform = `translate(${rx*8}px, ${ry*8}px)`;
+      if(soft) soft.style.transform = `translate(${rx*-10}px, calc(-50% + ${ry*10}px))`;
+      if(scribble) scribble.style.transform = `translate(${rx*-12}px, ${ry*-4}px)`;
+    });
+  }
+
+  const nextBtn = document.querySelector('.scroll-next');
+  const topBtn = document.querySelector('.scroll-top');
+  const container = document.querySelector('.snap-container');
+  const sections = [...document.querySelectorAll('.snap')];
+
+  const scrollToIndex = (i)=>{
+    const t = sections[i]; if(!t) return;
+    t.scrollIntoView({behavior:'smooth',block:'start'});
+  };
+
+  nextBtn && nextBtn.addEventListener('click', ()=>{
+    const i = sections.findIndex(s=>Math.abs(s.getBoundingClientRect().top)<window.innerHeight*0.6);
+    scrollToIndex(Math.min(i+1, sections.length-1));
+  });
+  topBtn && topBtn.addEventListener('click', ()=>scrollToIndex(0));
+
+  // 카드 등장(간단)
+  document.querySelector('.oncards')?.classList.add('is-ready','is-in');
+})();
+</script>

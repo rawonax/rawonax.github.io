@@ -239,8 +239,29 @@
           </a>
         </li>
       {% endif %}
+        <li>
+          <a href="/home/" class="btn btn--primary" style="display:inline-block; padding: 0.4em 1em; background:#333; color:#fff; border-radius: 6px; font-weight:500;">
+            🌟 외주 문의하기
+          </a>
+        </li>
 
       {% include author-profile-custom-links.html %}
     </ul>
   </div>
 </div>
+
+
+
+
+{% if author.github %}
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+      const githubLink = document.querySelector('.author__urls a[href*="github.com"]');
+      if (githubLink) {
+        githubLink.setAttribute('target', '_blank');
+        githubLink.setAttribute('rel', 'noopener noreferrer');
+      }
+    });
+  </script>
+{% endif %}
+

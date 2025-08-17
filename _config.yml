@@ -1,3 +1,4 @@
+
 # Welcome to Jekyll!
 #
 # This config file is meant for settings that affect your entire site, values
@@ -17,21 +18,21 @@ minimal_mistakes_skin    : "default" # "air", "aqua", "contrast", "dark", "dirt"
 # Site Settings
 locale                   : "ko"
 rtl                      : # true, false (default) # turns direction of the page into right to left for RTL languages
-title                    : "ramona's devstory"
+title                    : "jena park's blog" # the title of your site, e.g. "My Awesome Site"
 title_separator          : "-"
-subtitle                 : "박제나"
+subtitle                 : ""
 description              : "내일의 후회가 오늘이 되지 않도록"
-url                      : "rawonax.github.io" # the base hostname & protocol for your site, e.g. "https://example.com"`
+url                      : "https://rawonax.github.io" # the base hostname & protocol for your site, e.g. "https://example.com"`
 baseurl                  : ""
 repository               : "rawonax/rawonax.github.io"
-teaser                   : "profile/logo.png"
+teaser                   : ""
  # path of teaser image to display in the masthead, e.g. "/assets/images/88x88.png"
-logo                     : "profile/logo.png"
-masthead_title           : "rawmona"
+logo                     : ""
+masthead_title           : "Jena's Blog" # title to display in the masthead, e.g. "My Awesome Site"
 breadcrumbs              : true
 words_per_minute         : 200
 enable_copy_code_button  : true
-copyright                : "&copy; 2025 ramona"
+copyright                : "&copy; 2025 jena park"
 copyright_url            : # "copyright" URL, defaults to site.url
 comments:
   provider               : # false (default), "disqus", "discourse", "facebook", "staticman", "staticman_v2", "utterances", "giscus", "custom"
@@ -112,9 +113,13 @@ analytics:
 # Site Author
 author:
   name             : "박제나"
-  avatar           : "profile/avatar.png"
+  avatar           : "profile/profile.gif"
   bio              : "오늘의 후회가 내일이 되지 않도록"
+<<<<<<< HEAD
   location         : "coming soon, NY"
+=======
+  location         : "NY, USA"
+>>>>>>> 77d038012fbff1e85659b846a71db0e43bde2cea
   email            : "mailto:rawonax7@gmail.com"
   links:
     - label: "Email"
@@ -224,6 +229,136 @@ sass:
 
 # Outputting
 permalink: /:categories/:title/
+timezone: # https://en.wikipedia.org/wiki/List_of_tz_database_time_zones
+
+
+# Pagination with jekyll-paginate
+paginate: 5 # amount of posts to show
+paginate_path: /page:num/
+
+# Pagination with jekyll-paginate-v2
+# See https://github.com/sverrirs/jekyll-paginate-v2/blob/master/README-GENERATOR.md#site-configuration
+#   for configuration details
+pagination:
+  # Set enabled to true to use paginate v2
+  # enabled: true
+  debug: false
+  collection: 'posts'
+  per_page: 10
+  permalink: '/page/:num/'
+  title: ':title - page :num'
+  limit: 0
+  sort_field: 'date'
+  sort_reverse: true
+  category: 'posts'
+  tag: ''
+  locale: ''
+  trail:
+    before: 2
+    after: 2
+
+
+
+# mimic GitHub Pages with --safe
+whitelist:
+  - jekyll-paginate
+  - jekyll-sitemap
+  - jekyll-gist
+  - jekyll-feed
+  - jekyll-include-cache
+
+
+# Archives
+#  Type
+#  - GitHub Pages compatible archive pages built with Liquid ~> type: liquid (default)
+#  - Jekyll Archives plugin archive pages ~> type: jekyll-archives
+#  Path (examples)
+#  - Archive page should exist at path when using Liquid method or you can
+#    expect broken links (especially with breadcrumbs enabled)
+#  - <base_path>/tags/my-awesome-tag/index.html ~> path: /tags/
+#  - <base_path>/categories/my-awesome-category/index.html ~> path: /categories/
+#  - <base_path>/my-awesome-category/index.html ~> path: /
+category_archive:
+  type: liquid
+  path: /categories/
+tag_archive:
+  type: liquid
+  path: /tags/
+# https://github.com/jekyll/jekyll-archives
+# jekyll-archives:
+#   enabled:
+#     - categories
+#     - tags
+#   layouts:
+#     category: archive-taxonomy
+#     tag: archive-taxonomy
+#   permalinks:
+#     category: /categories/:name/
+#     tag: /tags/:name/
+
+
+# HTML Compression
+# - https://jch.penibelst.de/
+compress_html:
+  clippings: all
+  ignore:
+    envs: development
+
+
+# Defaults
+defaults:
+  # _posts
+  - scope:
+      path: ""
+      type: posts
+    values:
+      layout: single
+      author_profile: true
+      toc: true
+      toc_sticky: true
+      toc_label: "목차"
+      read_time: true
+      comments: # true
+      share: true
+      related: true
+timezone: Asia/Seoul
+
+
+
+# Pagination with jekyll-paginate
+paginate: 5 # amount of posts to show
+paginate_path: /page:num/
+
+# Pagination with jekyll-paginate-v2
+# See https://github.com/sverrirs/jekyll-paginate-v2/blob/master/README-GENERATOR.md#site-configuration
+#   for configuration details
+pagination:
+  # Set enabled to true to use paginate v2
+  # enabled: true
+  debug: false
+  collection: 'posts'
+  per_page: 10
+  permalink: '/page/:num/'
+  title: ':title - page :num'
+  limit: 0
+  sort_field: 'date'
+  sort_reverse: true
+  category: 'posts'
+  tag: ''
+  locale: ''
+  trail:
+    before: 2
+    after: 2
+
+
+# Plugins (previously gems:)
+plugins:
+  - jekyll-paginate
+  - jekyll-sitemap
+  - jekyll-gist
+  - jekyll-feed
+  - jekyll-include-cache
+
 # Welcome to Jekyll!
 #
 # This config file is meant for settings that affect your entire site, values
@@ -243,21 +378,21 @@ minimal_mistakes_skin    : "default" # "air", "aqua", "contrast", "dark", "dirt"
 # Site Settings
 locale                   : "ko"
 rtl                      : # true, false (default) # turns direction of the page into right to left for RTL languages
-title                    : "ramona's devstory"
+title                    : "jena park's blog" # the title of your site, e.g. "My Awesome Site"
 title_separator          : "-"
-subtitle                 : "박제나"
+subtitle                 : ""
 description              : "내일의 후회가 오늘이 되지 않도록"
-url                      : "rawonax.github.io" # the base hostname & protocol for your site, e.g. "https://example.com"`
+url                      : "https://rawonax.github.io" # the base hostname & protocol for your site, e.g. "https://example.com"`
 baseurl                  : ""
 repository               : "rawonax/rawonax.github.io"
-teaser                   : "profile/logo.png"
+teaser                   : ""
  # path of teaser image to display in the masthead, e.g. "/assets/images/88x88.png"
-logo                     : "profile/logo.png"
-masthead_title           : "rawmona"
+logo                     : ""
+masthead_title           : "Jena's Blog" # title to display in the masthead, e.g. "My Awesome Site"
 breadcrumbs              : true
 words_per_minute         : 200
 enable_copy_code_button  : true
-copyright                : "&copy; 2025 ramona"
+copyright                : "&copy; 2025 jena park"
 copyright_url            : # "copyright" URL, defaults to site.url
 comments:
   provider               : # false (default), "disqus", "discourse", "facebook", "staticman", "staticman_v2", "utterances", "giscus", "custom"
@@ -338,9 +473,9 @@ analytics:
 # Site Author
 author:
   name             : "박제나"
-  avatar           : "profile/avatar.png"
+  avatar           : "profile/profile.gif"
   bio              : "오늘의 후회가 내일이 되지 않도록"
-  location         : "estsoft, south korea"
+  location         : "NY, USA"
   email            : "mailto:rawonax7@gmail.com"
   links:
     - label: "Email"
@@ -486,6 +621,8 @@ plugins:
   - jekyll-gist
   - jekyll-feed
   - jekyll-include-cache
+  - jekyll-seo-tag
+
 
 # mimic GitHub Pages with --safe
 whitelist:
@@ -579,13 +716,62 @@ pagination:
     after: 2
 
 
-# Plugins (previously gems:)
-plugins:
-  - jekyll-paginate
-  - jekyll-sitemap
-  - jekyll-gist
-  - jekyll-feed
-  - jekyll-include-cache
+
+
+# Archives
+#  Type
+#  - GitHub Pages compatible archive pages built with Liquid ~> type: liquid (default)
+#  - Jekyll Archives plugin archive pages ~> type: jekyll-archives
+#  Path (examples)
+#  - Archive page should exist at path when using Liquid method or you can
+#    expect broken links (especially with breadcrumbs enabled)
+#  - <base_path>/tags/my-awesome-tag/index.html ~> path: /tags/
+#  - <base_path>/categories/my-awesome-category/index.html ~> path: /categories/
+#  - <base_path>/my-awesome-category/index.html ~> path: /
+category_archive:
+  type: liquid
+  path: /categories/
+tag_archive:
+  type: liquid
+  path: /tags/
+# https://github.com/jekyll/jekyll-archives
+# jekyll-archives:
+#   enabled:
+#     - categories
+#     - tags
+#   layouts:
+#     category: archive-taxonomy
+#     tag: archive-taxonomy
+#   permalinks:
+#     category: /categories/:name/
+#     tag: /tags/:name/
+
+
+# HTML Compression
+# - https://jch.penibelst.de/
+compress_html:
+  clippings: all
+  ignore:
+    envs: development
+
+
+# Defaults
+defaults:
+  # _posts
+  - scope:
+      path: ""
+      type: posts
+    values:
+      layout: single
+      author_profile: true
+      toc: true
+      toc_sticky: true
+      toc_label: "목차"
+      read_time: true
+      comments: # true
+      share: true
+      related: true
+
 
 # mimic GitHub Pages with --safe
 whitelist:
@@ -649,4 +835,5 @@ defaults:
       comments: # true
       share: true
       related: true
+
 

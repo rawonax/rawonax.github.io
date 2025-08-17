@@ -1,0 +1,14 @@
+.age__content {
+  font-size: 0.77rem;
+  line-height: 1.5;
+}
+
+.masthead, .greedy-nav {
+  background: transparent !important;
+  box-shadow: none !important;
+}
+
+.greedy-nav {
+  background: rgba(255,255,255,0.3) !important;
+  backdrop-filter: blur(8px);
+}

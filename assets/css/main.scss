@@ -1,27 +1,12 @@
 ---
 # Only the main Sass file needs front matter (the dashes are enough)
-search: false
 ---
 
 @charset "utf-8";
 
-@import "minimal-mistakes/skins/{{ site.minimal_mistakes_skin | default: 'default' }}"; // skin
-@import "minimal-mistakes"; // main partials
+// Minimal Mistakes skin
+@import "minimal-mistakes/skins/default"; // 원하는 스킨명으로 변경 가능
+@import "minimal-mistakes";
 
-// 📝 Custom Font Size for Post Content
-.page__content {
-  font-size: 0.77rem; // adjust as you like
-  line-height: 1.5;
-}
-
-.page__content h1 {
-  font-size: 1.0rem;
-}
-.page__content h2 {
-  font-size: 0.9rem;
-}
-.page__content h3 {
-  font-size: 0.8rem;
-}
-
-
+// 커스텀 스타일 임포트
+@import "custom"; // ← 세미콜론 반드시 넣기
