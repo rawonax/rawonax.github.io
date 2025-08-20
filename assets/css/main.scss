@@ -10,3 +10,16 @@
 
 // 커스텀 스타일 임포트
 @import "custom"; // ← 세미콜론 반드시 넣기
+
+.page__content {
+  font-size: 0.7em;
+}
+
+.page__content h1,
+.page__content h2,
+.page__content h3,
+.page__content h4,
+.page__content h5,
+.page__content h6 {
+  font-size: inherit;
+}

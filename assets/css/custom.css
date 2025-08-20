@@ -129,3 +129,8 @@ a:visited {
   text-decoration: none !important; /* 밑줄도 원래랑 동일하게 */
 }
 
+
+
+body {
+  font-size: 0.3em; 
+}
