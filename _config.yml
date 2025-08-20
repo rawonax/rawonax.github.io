@@ -830,7 +830,7 @@ defaults:
       toc_sticky: true
       toc_label: "목차"
       read_time: true
-      comments: # true
+      comments: true
       share: true
       related: true
 
