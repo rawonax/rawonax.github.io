@@ -1,5 +1,6 @@
 ---
 layout: default
+comments: true
 ---
 
 {% if page.header.overlay_color or page.header.overlay_image or page.header.image %}
@@ -84,4 +85,8 @@ layout: default
   {% elsif page.id and page.related %}
     {% include page__related.html posts=site.posts %}
   {% endif %}
+  {% if page.comments %}
+  {% include comments.html %}
+{% endif %}
+
 </div>
