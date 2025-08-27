@@ -23,3 +23,17 @@
 .page__content h6 {
   font-size: inherit;
 }
+
+:root { --link-color: #000; }
+
+a, a:visited { color: var(--link-color) !important; }
+a:hover { text-decoration: underline; }
+a:focus-visible { outline: 2px solid currentColor; outline-offset: 2px; }
+
+.page__content a:visited,
+.sidebar a:visited,
+.masthead a:visited,
+.footer a:visited { color: var(--link-color) !important; }
+
+
+

@@ -1,0 +1,22 @@
+/* 방문한 링크도 일반 링크와 동일한 색상 사용 */
+:root { --link-color: #0b65c2; } /* 원하는 링크 컬러로 */
+
+a,
+a:visited {
+  color: var(--link-color) !important;
+}
+
+/* hover/focus는 가시성 유지 */
+a:hover { text-decoration: underline; }
+a:focus-visible {
+  outline: 2px solid currentColor;
+  outline-offset: 2px;
+}
+
+/* 본문/사이드바 등 영역별 테마가 있는 경우도 함께 잠금 */
+.page__content a:visited,
+.sidebar a:visited,
+.masthead a:visited,
+.footer a:visited {
+  color: var(--link-color) !important;
+}
