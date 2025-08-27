@@ -35,5 +35,7 @@ a:focus-visible { outline: 2px solid currentColor; outline-offset: 2px; }
 .masthead a:visited,
 .footer a:visited { color: var(--link-color) !important; }
 
-
-
+p {
+  font-size: 0.8rem; /* 현재 기본 글자 크기보다 작게 */
+  line-height: 1.4;  /* 줄 간격도 함께 조절 */
+}
