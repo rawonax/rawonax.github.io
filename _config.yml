@@ -835,3 +835,14 @@ defaults:
       related: true
 
 
+# --- React + Vite 통합 보호 설정 ---
+exclude:
+  - node_modules
+  - vite.config.js
+  - package.json
+  - package-lock.json
+  - assets/js/*.jsx
+  - CHANGELOG.md
+
+keep_files:
+  - assets/js/bundle.js
