@@ -846,3 +846,5 @@ exclude:
 
 keep_files:
   - assets/js/bundle.js
+include:
+  - _pages
